@@ -1,0 +1,354 @@
+---
+const { title, description, breadcrumb, slug, image, noindex } = Astro.props;
+const pageTitle = title ? `${title} — 保定冰柿资讯` : '保定冰柿资讯站';
+const pageDesc = description || '保定冰柿 — 保定市区域公用品牌，柿子做成的冰激凌。聚合冰柿产业资讯、新闻报道、产品知识。';
+const canonical = slug ? `https://icyshi.com/${slug}` : 'https://icyshi.com';
+const pageImage = image || '/favicon.svg';
+const siteName = '保定冰柿资讯站';
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
+    <meta name="keywords" content="保定冰柿,冰柿,磨盘柿,保定特产,冰激凌柿子,保定,易县" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`https://icyshi.com${pageImage}`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content="zh_CN" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDesc} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: siteName,
+      url: 'https://icyshi.com',
+      description: pageDesc,
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: 'https://icyshi.com/?q={search_term_string}',
+        'query-input': 'required name=search_term_string',
+      },
+    })} />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        color: #1a1a2e; line-height: 1.8; background: #faf9f8;
+        scroll-behavior: smooth;
+      }
+      ::selection { background: #fed7aa; color: #1a1a2e; }
+      a { color: #c2410c; text-decoration: none; }
+      a:hover { color: #9a3412; }
+      .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+      header {
+        background: linear-gradient(135deg, #c2410c, #ea580c);
+        color: #fff; padding: 0;
+        position: sticky; top: 0; z-index: 100;
+        box-shadow: 0 2px 12px rgba(194,65,12,0.3);
+      }
+      header .container {
+        display: flex; align-items: center; justify-content: space-between;
+        height: 60px;
+      }
+      .logo { font-size: 1.4rem; font-weight: 700; letter-spacing: 1px; flex-shrink: 0; }
+      .logo a { color: #fff; display: flex; align-items: center; gap: 6px; }
+      .logo a:hover { color: #fff; opacity: 0.9; }
+      .logo span { font-size: 0.65rem; opacity: 0.8; display: block; font-weight: 400; letter-spacing: 1px; }
+      nav { display: flex; gap: 20px; }
+      nav a { color: rgba(255,255,255,0.9); font-size: 0.85rem; transition: color 0.2s; white-space: nowrap; }
+      nav a:hover, nav a.active { color: #fff; }
+      .header-right { display: flex; align-items: center; gap: 12px; }
+      .search-box { position: relative; }
+      .search-box input {
+        padding: 6px 32px 6px 12px; border: none; border-radius: 6px;
+        font-size: 0.82rem; width: 170px; outline: none;
+        background: rgba(255,255,255,0.2); color: #fff; transition: all 0.2s;
+      }
+      .search-box input::placeholder { color: rgba(255,255,255,0.6); }
+      .search-box input:focus { background: rgba(255,255,255,0.3); width: 200px; }
+      .search-box .search-icon {
+        position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+        color: rgba(255,255,255,0.6); font-size: 0.8rem; pointer-events: none;
+      }
+      .search-results {
+        display: none; position: absolute; top: calc(100% + 4px); right: 0; left: 0;
+        background: #fff; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        max-height: 360px; overflow-y: auto; z-index: 200;
+      }
+      .search-results a { display: block; padding: 10px 14px; border-bottom: 1px solid #f5f0eb; color: #1a1a2e; font-size: 0.85rem; }
+      .search-results a:last-child { border: none; }
+      .search-results a:hover { background: #fff7ed; color: #c2410c; }
+      .search-results .s-meta { font-size: 0.75rem; color: #999; }
+      .hamburger { display: none; background: none; border: none; color: #fff; font-size: 1.4rem; cursor: pointer; padding: 4px; }
+      main { min-height: calc(100vh - 120px); padding: 32px 0; }
+
+      /* Breadcrumb */
+      .breadcrumb {
+        font-size: 0.82rem; color: #999; margin-bottom: 20px;
+        display: flex; flex-wrap: wrap; gap: 4px;
+      }
+      .breadcrumb a { color: #999; }
+      .breadcrumb a:hover { color: #c2410c; }
+      .breadcrumb .sep { margin: 0 4px; color: #ccc; }
+
+      /* Article content */
+      .article-content h2 { font-size: 1.3rem; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #f0e8e0; }
+      .article-content h3 { font-size: 1.1rem; margin: 22px 0 10px; }
+      .article-content p { margin-bottom: 14px; }
+      .article-content ul, .article-content ol { margin: 0 0 14px 20px; }
+      .article-content li { margin-bottom: 6px; }
+      .article-content table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.9rem; }
+      .article-content th { background: #fff7ed; padding: 8px 12px; border: 1px solid #fdba74; text-align: left; font-weight: 600; }
+      .article-content td { padding: 8px 12px; border: 1px solid #e5ddd5; }
+      .article-content tr:nth-child(even) { background: #faf9f8; }
+      .article-content blockquote {
+        border-left: 3px solid #fdba74; padding: 10px 16px; margin: 14px 0;
+        background: #fff7ed; border-radius: 0 6px 6px 0; color: #555; font-size: 0.92rem;
+      }
+      .article-content strong { color: #c2410c; }
+
+      /* Page title */
+      .page-title { margin-bottom: 28px; }
+      .page-title h1 { margin-bottom: 6px; font-size: 1.9rem; line-height: 1.4; }
+      .page-title p { color: #666; font-size: 0.9rem; }
+
+      /* Card */
+      .card {
+        background: #fff; border-radius: 10px; padding: 22px 24px;
+        margin-bottom: 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        border: 1px solid #f0e8e0; transition: box-shadow 0.2s;
+      }
+      .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+      .card h2 { margin: 0 0 8px; font-size: 1.15rem; line-height: 1.5; }
+      .card h2 a { color: #1a1a2e; }
+      .card h2 a:hover { color: #c2410c; }
+      .card .meta { font-size: 0.82rem; color: #999; margin-bottom: 8px; }
+      .card p { color: #555; font-size: 0.93rem; margin: 0; line-height: 1.7; }
+      .tag {
+        display: inline-block; background: #fff7ed; color: #c2410c;
+        font-size: 0.72rem; padding: 2px 10px; border-radius: 4px; font-weight: 500;
+      }
+      .tag-industry { background: #e8f5e9; color: #2e7d32; }
+      .tag-data { background: #e3f2fd; color: #1565c0; }
+      .tag-brand { background: #fce4ec; color: #c62828; }
+      .tag-tech { background: #f3e5f5; color: #7b1fa2; }
+      .tag-market { background: #e0f7fa; color: #00695c; }
+      .tag-export { background: #fff3e0; color: #e65100; }
+      .tag-expo { background: #f1f8e9; color: #558b2f; }
+      .tag-policy { background: #ede7f6; color: #4527a0; }
+      .tag-depth { background: #fbe9e7; color: #bf360c; }
+      .tag-encyclopedia { background: #e8eaf6; color: #283593; }
+      .verified-badge {
+        display: inline-block; background: #dcfce7; color: #16a34a;
+        font-size: 0.7rem; padding: 1px 8px; border-radius: 4px; font-weight: 600;
+        vertical-align: middle; margin-left: 4px;
+      }
+
+      /* Footer */
+      footer {
+        background: #1a1a2e; color: rgba(255,255,255,0.7);
+        text-align: center; padding: 24px 0; font-size: 0.82rem;
+      }
+      footer a { color: #f97316; }
+      footer a:hover { color: #fb923c; }
+
+      /* Back to top */
+      .back-top {
+        position: fixed; right: 24px; bottom: 40px; width: 40px; height: 40px;
+        background: #c2410c; color: #fff; border: none; border-radius: 50%;
+        font-size: 1.2rem; cursor: pointer; display: none; align-items: center; justify-content: center;
+        box-shadow: 0 4px 12px rgba(194,65,12,0.3); z-index: 99; transition: all 0.2s;
+      }
+      .back-top:hover { background: #9a3412; transform: translateY(-2px); }
+      .back-top.visible { display: flex; }
+
+      /* Reading progress */
+      .progress-bar {
+        position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #fb923c, #f97316);
+        z-index: 101; transition: width 0.1s;
+      }
+
+      /* Mobile responsive */
+      @media (max-width: 768px) {
+        header .container { height: auto; padding: 10px 16px; flex-wrap: wrap; }
+        .logo { font-size: 1.2rem; }
+        .logo span { display: none; }
+        .hamburger { display: block; }
+        nav {
+          display: none; width: 100%; flex-direction: column; gap: 0;
+          padding: 8px 0 4px; border-top: 1px solid rgba(255,255,255,0.15); margin-top: 8px;
+        }
+        nav.open { display: flex; }
+        nav a { padding: 8px 0; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .search-box { width: 100%; margin-top: 4px; }
+        .search-box input { width: 100%; background: rgba(255,255,255,0.15); }
+        .search-box input:focus { width: 100%; }
+        .search-results { left: 0; right: 0; }
+        h1 { font-size: 1.5rem; }
+        .page-title h1 { font-size: 1.5rem; }
+        .card { padding: 16px 18px; }
+        .back-top { right: 16px; bottom: 24px; width: 36px; height: 36px; font-size: 1rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress-bar" id="progressBar"></div>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="/">🍊 保定冰柿</a>
+          <span>Baoding Frozen Persimmon</span>
+        </div>
+        <div class="header-right">
+          <div class="search-box">
+            <input type="text" id="searchInput" placeholder="搜索文章..." />
+            <span class="search-icon">🔍</span>
+            <div class="search-results" id="searchResults"></div>
+          </div>
+          <button class="hamburger" id="hamburgerBtn" aria-label="菜单">☰</button>
+        </div>
+      </div>
+      <div class="container" style="height:auto;padding-top:0;padding-bottom:0;">
+        <nav id="mainNav">
+          <a href="/">首页</a>
+          <a href="/news/">新闻</a>
+          <a href="/enterprises/">企业品牌</a>
+          <a href="/knowledge/">冰柿百科</a>
+          <a href="/industry/">产业资讯</a>
+          <a href="/media/">媒体报道</a>
+          <a href="/guide/">食用指南</a>
+          <a href="/about/">关于</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        {breadcrumb && (
+          <div class="breadcrumb">
+            <a href="/">首页</a>
+            {breadcrumb.map((item, i) => (
+              <>
+                <span class="sep">›</span>
+                {i < breadcrumb.length - 1 ? (
+                  <a href={item.url}>{item.label}</a>
+                ) : (
+                  <span style="color:#666;">{item.label}</span>
+                )}
+              </>
+            ))}
+          </div>
+        )}
+        <slot />
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <p>© {new Date().getFullYear()} <a href="https://icyshi.com">icyshi.com</a> — 保定冰柿资讯站</p>
+        <p style="margin-top:6px;font-size:0.77rem;color:rgba(255,255,255,0.45)">
+          聚合产业资讯，助力乡村振兴 · <a href="/about/">关于本站</a>
+        </p>
+        <p style="margin-top:10px;font-size:0.77rem;color:rgba(255,255,255,0.45)">
+          友情链接：
+          <a href="http://jinshiyuan.cc" target="_blank" rel="noopener">零柿界官网</a> ·
+          <a href="http://www.bdwlny.com/" target="_blank" rel="noopener">沃隆农业官网</a> ·
+
+          <a href="http://www.mopanshi.cn" target="_blank" rel="noopener">冰柿网</a>
+        </p>
+      </div>
+    </footer>
+    <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+
+    <script>
+      const articles = [
+        { slug: 'langfang-fair-2026', cat: 'news', title: '「二刷」廊坊经洽会，保定冰柿新品「原切冰吸柿」亮相', date: '2026-06-17', tag: '展会' },
+      { slug: 'yixian-small-persimmon', cat: 'news', title: '河北易县小柿子冰出大产业', date: '2026-04-02', tag: '产业' },
+      { slug: 'yixian-wuhan-expo', cat: 'news', title: '易县农特产品组团闯武汉亮相良之隆食材电商节', date: '2026-04-02', tag: '展会' },
+      { slug: 'baoding-agri-breakthrough', cat: 'news', title: '保定市农业农村高质量发展实现新突破', date: '2026-03-14', tag: '数据' },
+      { slug: 'qiang-teyou-chanye', cat: 'news', title: '做强特色优势产业 全面推进乡村振兴', date: '2026-01-19', tag: '深度' },
+      { slug: 'global-launch-2026', cat: 'news', title: '保定冰柿全球发布会在易县举行，冰柿企业增至5家', date: '2026-04-28', tag: '产业' },
+        { slug: 'export-to-canada', cat: 'news', title: '从易县到多伦多，15000枚保定冰柿首发出海', date: '2026-04-28', tag: '出口' },
+        { slug: 'shenzhen-food-expo-2026', cat: 'news', title: '保定冰柿亮相深圳全食展，俄罗斯客商点赞', date: '2026-03-13', tag: '展会' },
+        { slug: 'shibingbing-launch', cat: 'news', title: '新锐品牌柿冰冰首发：国潮盲盒冰柿，预售突破10万杯', date: '2026-02-15', tag: '品牌' },
+        { slug: 'shixiaoyi-brand', cat: 'news', title: '柿小意保定冰柿：四十年果业底蕴，18道工艺', date: '2026-02-04', tag: '品牌' },
+        { slug: 'duleshiguang-brand', cat: 'news', title: '独乐时光保定冰柿：沃隆8条线年产值1.65亿', date: '2026-05-05', tag: '品牌' },
+        { slug: 'qiuse-weicheng-brand', cat: 'news', title: '秋色围城保定冰柿：纯天然零添加', date: '2026-03-13', tag: '品牌' },
+        { slug: 'shiniu-brand', cat: 'news', title: '柿妞保定冰柿：冰柿品类开创者王永旺的创始品牌', date: '2024-09-04', tag: '品牌' },
+        { slug: 'three-dragon-head', cat: 'news', title: '保定冰柿产业格局：五大企业全景，企业增至5家', date: '2026-06-01', tag: '企业' },
+        { slug: 'wolong-export-guide', cat: 'news', title: '保定海关全程指导冰柿出口加拿大', date: '2026-05-09', tag: '出口' },
+        { slug: 'capacity-2026', cat: 'news', title: '保定冰柿35条生产线投产，年产能突破7250万枚', date: '2026-01-20', tag: '数据' },
+        { slug: 'industry-revolution', cat: 'news', title: '一颗柿子的产业革命——保定冰柿走红记', date: '2026-01-20', tag: '深度' },
+        { slug: 'output-2025', cat: 'news', title: '保定冰柿2025年上市320万个，产值3200万元', date: '2025-07-14', tag: '数据' },
+        { slug: 'brand-plan', cat: 'news', title: '保定市出台冰柿品牌培育推广营销方案', date: '2025-06-01', tag: '政策' },
+        { slug: 'wolong-auto-peeling', cat: 'news', title: '沃隆农业自研冰柿自动去皮机，效率提升20倍', date: '2025-05-03', tag: '技术' },
+        { slug: 'yixian-pengpai', cat: 'news', title: '易县：小柿子冻出大产业，冰柿成乡村振兴黄金果', date: '2025-04-24', tag: '深度' },
+        { slug: 'guangming-daily-2025', cat: 'news', title: '光明日报：冰柿子让农民尝到了甜头', date: '2025-04-03', tag: '深度' },
+        { slug: 'baoding-policy-2025', cat: 'news', title: '保定聚焦冰柿百亿级产业，560家客商达成意向', date: '2025-03-13', tag: '政策' },
+        { slug: 'market-channels', cat: 'news', title: '保定冰柿进驻盒马等高端渠道，7省代理300网点', date: '2026-01-01', tag: '市场' },
+        { slug: 'bing-shi-brand-story', cat: 'news', title: '保定冰柿品牌故事：从柿子冰激凌到保定美食四件套', date: '2026-01-01', tag: '品牌' },
+        { slug: 'shared-factory', cat: 'news', title: '易县190亩冰柿共享产业园正式投产', date: '2025-10-01', tag: '产业' },
+        { slug: 'what-is-bing-shi', cat: 'knowledge', title: '什么是保定冰柿？', date: '2025-01-01', tag: '百科' },
+        { slug: 'process', cat: 'knowledge', title: '保定冰柿的制作工艺与核心技术', date: '2025-01-01', tag: '百科' },
+        { slug: 'mopan-persimmon', cat: 'knowledge', title: '磨盘柿——保定冰柿的前世', date: '2025-01-01', tag: '百科' },
+        { slug: 'industry-chain', cat: 'knowledge', title: '保定冰柿产业链全景：从柿园到餐桌', date: '2026-01-01', tag: '百科' },
+      ];
+
+      // Search
+      const searchInput = document.getElementById('searchInput');
+      const searchResults = document.getElementById('searchResults');
+
+      function doSearch() {
+        const q = searchInput.value.toLowerCase().trim();
+        if (!q) { searchResults.style.display = 'none'; return; }
+        const hits = articles.filter(a => a.title.toLowerCase().includes(q) || a.tag.includes(q));
+        if (hits.length === 0) {
+          searchResults.innerHTML = '<div style="padding:14px 16px;color:#999;font-size:0.85rem;">未找到相关内容</div>';
+        } else {
+          searchResults.innerHTML = hits.map(a =>
+            `<a href="/${a.cat}/${a.slug}"><span class="s-meta">${a.date} · ${a.tag}</span><div>${a.title}</div></a>`
+          ).join('');
+        }
+        searchResults.style.display = 'block';
+      }
+
+      searchInput.addEventListener('input', doSearch);
+      searchInput.addEventListener('focus', function() { if (this.value.trim()) doSearch(); });
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.search-box')) searchResults.style.display = 'none';
+      });
+
+      // Back to top
+      const backTop = document.getElementById('backTop');
+      window.addEventListener('scroll', function() {
+        backTop.classList.toggle('visible', window.scrollY > 400);
+      });
+
+      // Reading progress bar (only on article pages)
+      const progressBar = document.getElementById('progressBar');
+      if (document.querySelector('article')) {
+        window.addEventListener('scroll', function() {
+          const scrollTop = window.scrollY;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          progressBar.style.width = docHeight > 0 ? (scrollTop / docHeight * 100) + '%' : '0%';
+        });
+      } else {
+        progressBar.style.display = 'none';
+      }
+
+      // Mobile hamburger
+      document.getElementById('hamburgerBtn').addEventListener('click', function() {
+        document.getElementById('mainNav').classList.toggle('open');
+      });
+    </script>
+  </body>
+</html>
