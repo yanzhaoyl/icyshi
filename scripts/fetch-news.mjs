@@ -1,31 +1,37 @@
 // ============================================================
-// 保定冰柿全平台情报采集器 for icyshi.com
+// 保定冰柿全平台情报采集器 v3 for icyshi.com
 // 用法: node scripts/fetch-news.mjs
 // GitHub Actions 每天自动运行
 // ============================================================
 //
-// 新闻渠道 (4 个):
+// 新闻渠道 (8 个):
 //   1. Bing News RSS        — 微软新闻聚合
 //   2. Google News RSS      — 全球新闻聚合
 //   3. Baidu News (HTML)    — 国内最大新闻聚合
 //   4. Sogou News (HTML)    — 搜狗新闻搜索
+//   5. 360 News (HTML)      — 360新闻搜索 ★新增
+//   6. 政府网站聚合 (Bing)   — site:gov.cn 保定冰柿 ★新增
+//   7. 行业网站聚合 (Bing)   — 果品/食品/农业行业网站 ★新增
+//   8. 百度资讯 (news.baidu) — 百度资讯频道 ★新增
 //
-// 多媒体平台情报 (8 个):
-//   5. 淘宝 (taobao.com)    — 通过搜索引擎索引检索
-//   6. 京东 (jd.com)        — 通过搜索引擎索引检索
-//   7. 拼多多 (pdd)         — 通过搜索引擎索引检索
-//   8. 抖音                 — 通过搜索引擎索引检索
-//   9. 快手                 — 通过搜索引擎索引检索
-//  10. 小红书               — 通过搜索引擎索引检索
-//  11. 视频号               — 通过搜索引擎索引检索
-//  12. 公众号 (weixin.sogou.com) — 搜狗微信搜索
+// 多媒体平台情报 (9 个):
+//   9.  淘宝 (taobao.com)    — 通过搜索引擎索引检索
+//   10. 京东 (jd.com)        — 通过搜索引擎索引检索
+//   11. 拼多多               — 通过搜索引擎索引检索
+//   12. 1688 (阿里巴巴)      — 通过搜索引擎索引检索 ★新增
+//   13. 抖音                 — 通过搜索引擎索引检索
+//   14. 快手                 — 通过搜索引擎索引检索
+//   15. 小红书               — 通过搜索引擎索引检索
+//   16. 视频号               — 通过搜索引擎索引检索
+//   17. 公众号 (weixin.sogou) — 搜狗微信搜索
 //
-// 13. 盒马鲜生              — 新零售渠道情报
+// 18. 盒马鲜生              — 新零售渠道情报
 //
 // 数据处理:
 //   - 去重: URL 精确去重 + 标题 Jaccard 相似度 (≥0.55)
 //   - 交叉验证: 同一新闻被 ≥2 个独立渠道报道 → verified=true
 //   - 来源标注: 每篇文章标注 source + sourceUrl + sources[] + verifiedBy[]
+//   - 源发现: 跟踪新出现的域名，每周报告 ★新增
 //   - 渠道情报: 电商/社媒平台情报输出为 channel-report.json
 // ============================================================
 
@@ -36,6 +42,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = join(__dirname, '..', 'src', 'data', 'articles.json');
 const CHANNEL_REPORT_PATH = join(__dirname, '..', 'src', 'data', 'channel-report.json');
+const SOURCE_REGISTRY_PATH = join(__dirname, '..', 'src', 'data', 'source-registry.json');
 
 // ============================================================
 // 配置
@@ -60,11 +67,36 @@ const MULTIMEDIA_PLATFORMS = [
   { name: '淘宝', query: '保定冰柿 site:taobao.com', engine: 'bing' },
   { name: '京东', query: '保定冰柿 site:jd.com', engine: 'bing' },
   { name: '拼多多', query: '保定冰柿 拼多多', engine: 'bing' },
+  { name: '1688', query: '保定冰柿 site:1688.com', engine: 'bing' },
   { name: '抖音', query: '保定冰柿 抖音 直播', engine: 'bing' },
   { name: '快手', query: '保定冰柿 快手', engine: 'bing' },
   { name: '小红书', query: '保定冰柿 小红书 种草', engine: 'bing' },
   { name: '视频号', query: '保定冰柿 视频号', engine: 'bing' },
   { name: '盒马鲜生', query: '保定冰柿 盒马鲜生 购买', engine: 'bing' },
+];
+
+// 政府网站汇总检索
+const GOV_SITE_QUERIES = [
+  '保定冰柿 site:gov.cn',
+  '保定冰柿 site:hebei.gov.cn',
+  '保定冰柿 site:bd.gov.cn',
+  '冰柿 产业 site:gov.cn',
+];
+
+// 行业网站汇总检索
+const INDUSTRY_SITE_QUERIES = [
+  '保定冰柿 果品 产业',
+  '保定冰柿 食品 加工',
+  '保定冰柿 农产品 出口',
+  '冰柿 冷链 物流',
+  '磨盘柿 产业链',
+];
+
+// 已知权威来源域名 (用于自动分类)
+const AUTHORITATIVE_DOMAINS = [
+  'gov.cn', 'hebei.gov.cn', 'bd.gov.cn', 'people.com.cn',
+  'xinhuanet.com', 'cctv.com', 'chinanews.com', 'hebnews.cn',
+  'bdnews.cn', 'china.com.cn', 'gmw.cn', 'youth.cn',
 ];
 
 // ============================================================
@@ -118,7 +150,13 @@ function stripHtml(str) {
 function extractRealUrl(url) {
   const baiduMatch = url.match(/[?&]url=([^&]+)/);
   if (baiduMatch) { try { return decodeURIComponent(baiduMatch[1]); } catch {} }
+  const soMatch = url.match(/[?&]url=([^&]+)/);
+  if (soMatch) { try { return decodeURIComponent(soMatch[1]); } catch {} }
   return url;
+}
+
+function isAuthoritativeSource(domain) {
+  return AUTHORITATIVE_DOMAINS.some(d => domain.includes(d));
 }
 
 // ============================================================
@@ -129,7 +167,7 @@ async function fetchFromBingNews(keyword) {
   const url = `https://www.bing.com/news/search?q=${encodeURIComponent(keyword)}&format=rss&mkt=zh-CN`;
   try {
     const resp = await fetch(url, {
-      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; icyshi-bot/2.0)', 'Accept': 'application/rss+xml, application/xml, text/xml, */*' },
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; icyshi-bot/3.0)', 'Accept': 'application/rss+xml, application/xml, text/xml, */*' },
       signal: AbortSignal.timeout(REQUEST_TIMEOUT),
     });
     if (!resp.ok) return [];
@@ -161,7 +199,7 @@ async function fetchFromGoogleNews(keyword) {
   const url = `https://news.google.com/rss/search?q=${encodeURIComponent(keyword)}&hl=zh-CN&gl=CN&ceid=CN:zh-Hans`;
   try {
     const resp = await fetch(url, {
-      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; icyshi-bot/2.0)', 'Accept': 'application/rss+xml, application/xml, text/xml, */*' },
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; icyshi-bot/3.0)', 'Accept': 'application/rss+xml, application/xml, text/xml, */*' },
       signal: AbortSignal.timeout(REQUEST_TIMEOUT),
     });
     if (!resp.ok) return [];
@@ -200,7 +238,6 @@ async function fetchFromBaiduNews(keyword) {
     const html = await resp.text();
 
     const items = [];
-    // 百度新闻在 <!--s-data: 注释中嵌入 JSON
     const sdataRegex = /<!--s-data:(\{[\s\S]*?\})-->/g;
     let match;
     const seen = new Set();
@@ -255,7 +292,114 @@ async function fetchFromSogouNews(keyword) {
 }
 
 // ============================================================
-// 采集源 5: 搜狗微信搜索 (公众号文章)
+// 采集源 5: 360 News (HTML 抓取) ★新增
+// ============================================================
+
+async function fetchFrom360News(keyword) {
+  const url = `https://news.so.com/ns?q=${encodeURIComponent(keyword)}&src=tab_www`;
+  try {
+    const resp = await fetch(url, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36', 'Accept': 'text/html', 'Accept-Language': 'zh-CN,zh;q=0.9' },
+      signal: AbortSignal.timeout(REQUEST_TIMEOUT),
+    });
+    if (!resp.ok) return [];
+    const html = await resp.text();
+    const items = [];
+    const seen = new Set();
+
+    // 360新闻搜索结果结构: 标题在 <a> 标签中
+    const linkRegex = /<a[^>]*href="(https?:\/\/[^"]*)"[^>]*class="[^"]*title[^"]*"[^>]*>([\s\S]*?)<\/a>/gi;
+    let match;
+    while ((match = linkRegex.exec(html)) !== null) {
+      const rawUrl = match[1], title = stripHtml(match[2]);
+      if (title && title.length > 10 && rawUrl && !rawUrl.includes('so.com') && !seen.has(rawUrl)) {
+        seen.add(rawUrl);
+        items.push({ title, url: rawUrl, summary: '', date: new Date().toISOString().slice(0, 10), sourceName: extractDomain(rawUrl), fetchSource: '360 News' });
+      }
+    }
+    // Fallback: 通用链接提取
+    if (items.length === 0) {
+      const fallbackRegex = /<a[^>]*href="(https?:\/\/[^"]*)"[^>]*>([\s\S]*?)<\/a>/gi;
+      while ((match = fallbackRegex.exec(html)) !== null) {
+        const rawUrl = match[1], title = stripHtml(match[2]);
+        if (title && title.length > 10 && rawUrl && !rawUrl.includes('so.com') && !seen.has(rawUrl)) {
+          seen.add(rawUrl);
+          items.push({ title, url: rawUrl, summary: '', date: new Date().toISOString().slice(0, 10), sourceName: extractDomain(rawUrl), fetchSource: '360 News' });
+        }
+      }
+    }
+    return items.slice(0, 20);
+  } catch (e) { console.log(`  [360 News] ⚠ ${e.message}`); return []; }
+}
+
+// ============================================================
+// 采集源 6: 政府网站聚合 (via Bing) ★新增
+// ============================================================
+
+async function fetchFromGovSites() {
+  const allItems = [];
+  for (const query of GOV_SITE_QUERIES) {
+    await sleep(INTER_REQUEST_DELAY);
+    const items = await fetchFromBingSearch(query);
+    for (const item of items) {
+      item.fetchSource = 'Gov Sites';
+      allItems.push(item);
+    }
+  }
+  console.log(`  [Gov Sites] 共 ${allItems.length} 条`);
+  return allItems;
+}
+
+// ============================================================
+// 采集源 7: 行业网站聚合 (via Bing) ★新增
+// ============================================================
+
+async function fetchFromIndustrySites() {
+  const allItems = [];
+  for (const query of INDUSTRY_SITE_QUERIES) {
+    await sleep(INTER_REQUEST_DELAY);
+    const items = await fetchFromBingSearch(query);
+    for (const item of items) {
+      item.fetchSource = 'Industry Sites';
+      allItems.push(item);
+    }
+  }
+  console.log(`  [Industry Sites] 共 ${allItems.length} 条`);
+  return allItems;
+}
+
+// ============================================================
+// 采集源 8: 百度资讯 (news.baidu.com) ★新增
+// ============================================================
+
+async function fetchFromBaiduZixun(keyword) {
+  const url = `https://news.baidu.com/ns?word=${encodeURIComponent(keyword)}&pn=0&rn=20&cl=2&ct=1&tn=news&ie=utf-8`;
+  try {
+    const resp = await fetch(url, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36', 'Accept': 'text/html', 'Accept-Language': 'zh-CN,zh;q=0.9' },
+      signal: AbortSignal.timeout(REQUEST_TIMEOUT),
+    });
+    if (!resp.ok) return [];
+    const html = await resp.text();
+    const items = [];
+    const seen = new Set();
+
+    // 百度资讯页面结构: 标题在 <h3> 中的 <a> 标签
+    const h3Regex = /<h3[^>]*class="[^"]*news-title[^"]*"[^>]*>[\s\S]*?<a[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/gi;
+    let match;
+    while ((match = h3Regex.exec(html)) !== null) {
+      const rawUrl = match[1], title = stripHtml(match[2]);
+      if (title && title.length > 8 && rawUrl && !seen.has(rawUrl)) {
+        seen.add(rawUrl);
+        items.push({ title, url: rawUrl, summary: '', date: new Date().toISOString().slice(0, 10), sourceName: extractDomain(rawUrl), fetchSource: 'Baidu Zixun' });
+      }
+    }
+    return items.slice(0, 20);
+  } catch (e) { console.log(`  [Baidu Zixun] ⚠ ${e.message}`); return []; }
+}
+
+// ============================================================
+// 采集源 9: 搜狗微信搜索 (公众号文章)
 // ============================================================
 
 async function fetchFromWeixinSogou(keyword) {
@@ -268,7 +412,6 @@ async function fetchFromWeixinSogou(keyword) {
     if (!resp.ok) return [];
     const html = await resp.text();
     const items = [];
-    // 搜狗微信搜索结果: 解析标题和链接
     const itemRegex = /<h3[^>]*>[\s\S]*?<a[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/gi;
     let match;
     const seen = new Set();
@@ -284,7 +427,7 @@ async function fetchFromWeixinSogou(keyword) {
 }
 
 // ============================================================
-// 采集源 6: Bing 通用搜索 (用于多媒体平台情报)
+// 通用搜索: Bing 搜索
 // ============================================================
 
 async function fetchFromBingSearch(query) {
@@ -297,7 +440,6 @@ async function fetchFromBingSearch(query) {
     if (!resp.ok && resp.status !== 302) return [];
     const html = await resp.text();
     const items = [];
-    // Bing 搜索结果: 解析搜索结果条目
     const resultRegex = /<li class="b_algo"[^>]*>[\s\S]*?<h2[^>]*>[\s\S]*?<a[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>[\s\S]*?<p[^>]*>([\s\S]*?)<\/p>/gi;
     let match;
     const seen = new Set();
@@ -313,7 +455,7 @@ async function fetchFromBingSearch(query) {
 }
 
 // ============================================================
-// 采集源 7: 多媒体平台渠道情报
+// 渠道情报采集
 // ============================================================
 
 async function fetchChannelIntel() {
@@ -352,13 +494,73 @@ async function fetchChannelIntel() {
 }
 
 // ============================================================
+// 源发现机制 ★新增
+// ============================================================
+
+function discoverNewSources(allRawItems, existingArticles) {
+  // 收集所有已知域名
+  const knownDomains = new Set();
+  for (const a of existingArticles) {
+    try { knownDomains.add(new URL(a.sourceUrl).hostname.replace('www.', '')); } catch {}
+  }
+
+  // 统计当前采集到的新域名
+  const newDomains = new Map();
+  for (const item of allRawItems) {
+    try {
+      const domain = new URL(item.url).hostname.replace('www.', '');
+      if (!knownDomains.has(domain)) {
+        newDomains.set(domain, (newDomains.get(domain) || 0) + 1);
+      }
+    } catch {}
+  }
+
+  // 更新源注册表
+  let sourceRegistry = { domains: {}, lastUpdated: null };
+  try {
+    sourceRegistry = JSON.parse(readFileSync(SOURCE_REGISTRY_PATH, 'utf-8'));
+  } catch {}
+
+  sourceRegistry.lastUpdated = new Date().toISOString();
+  for (const [domain, count] of newDomains) {
+    if (!sourceRegistry.domains[domain]) {
+      sourceRegistry.domains[domain] = { firstSeen: new Date().toISOString(), count: 0, authoritative: isAuthoritativeSource(domain) };
+    }
+    sourceRegistry.domains[domain].count += count;
+    sourceRegistry.domains[domain].lastSeen = new Date().toISOString();
+  }
+
+  writeFileSync(SOURCE_REGISTRY_PATH, JSON.stringify(sourceRegistry, null, 2), 'utf-8');
+
+  // 报告
+  if (newDomains.size > 0) {
+    console.log(`\n[Discovery] 发现 ${newDomains.size} 个新域名:`);
+    const sorted = [...newDomains.entries()].sort((a, b) => b[1] - a[1]);
+    for (const [domain, count] of sorted.slice(0, 10)) {
+      const auth = isAuthoritativeSource(domain) ? ' 🏛️权威' : '';
+      console.log(`  · ${domain} (${count}条)${auth}`);
+    }
+  }
+
+  // 统计权威源覆盖率
+  const totalDomains = Object.keys(sourceRegistry.domains).length;
+  const authDomains = Object.values(sourceRegistry.domains).filter(d => d.authoritative).length;
+  if (totalDomains > 0) {
+    console.log(`\n[Discovery] 源注册表: ${totalDomains} 个域名 (${authDomains} 个权威源)`);
+  }
+
+  return sourceRegistry;
+}
+
+// ============================================================
 // 主流程
 // ============================================================
 
 async function main() {
   console.log('═══════════════════════════════════════════');
-  console.log('  🦐 icyshi.com 全平台情报采集');
+  console.log('  🦐 icyshi.com 全平台情报采集 v3');
   console.log(`  时间: ${new Date().toISOString()}`);
+  console.log('  渠道: 8 新闻 + 9 电商社媒 + 1 新零售 = 18 渠道');
   console.log('═══════════════════════════════════════════\n');
 
   // 1. 加载现有文章
@@ -367,7 +569,7 @@ async function main() {
   const existingUrls = new Set(existing.map(a => a.sourceUrl).filter(Boolean));
   console.log(`[Load] 现有文章: ${existing.length} 篇\n`);
 
-  // 2. 新闻采集 (4 个渠道)
+  // 2. 新闻采集 (8 个渠道)
   const allRawItems = [];
 
   const newsSources = [
@@ -375,9 +577,11 @@ async function main() {
     { name: 'Google News', fn: fetchFromGoogleNews, type: 'RSS' },
     { name: 'Baidu News', fn: fetchFromBaiduNews, type: '抓取' },
     { name: 'Sogou News', fn: fetchFromSogouNews, type: '抓取' },
+    { name: '360 News', fn: fetchFrom360News, type: '抓取' },
+    { name: 'Baidu Zixun', fn: fetchFromBaiduZixun, type: '抓取' },
   ];
 
-  console.log('═ 新闻采集 ═');
+  console.log('═ 新闻采集 (6 渠道) ═');
   for (const source of newsSources) {
     console.log(`[${source.name}] (${source.type})`);
     for (const keyword of SEARCH_KEYWORDS) {
@@ -388,7 +592,17 @@ async function main() {
     }
   }
 
-  // 3. 公众号采集 (搜狗微信)
+  // 3. 政府网站聚合
+  console.log('\n[Gov Sites] 政府网站聚合');
+  const govItems = await fetchFromGovSites();
+  for (const item of govItems) allRawItems.push(item);
+
+  // 4. 行业网站聚合
+  console.log('\n[Industry Sites] 行业网站聚合');
+  const industryItems = await fetchFromIndustrySites();
+  for (const item of industryItems) allRawItems.push(item);
+
+  // 5. 公众号采集
   console.log('\n[WeChat] 搜狗微信搜索 (公众号)');
   for (const keyword of SEARCH_KEYWORDS.slice(0, 4)) {
     await sleep(INTER_REQUEST_DELAY);
@@ -399,7 +613,10 @@ async function main() {
 
   console.log(`\n[Stats] 原始采集: ${allRawItems.length} 条 (含重复)\n`);
 
-  // 4. 渠道情报
+  // 6. 源发现
+  const sourceRegistry = discoverNewSources(allRawItems, existing);
+
+  // 7. 渠道情报
   let channelReport = null;
   try {
     channelReport = await fetchChannelIntel();
@@ -409,7 +626,7 @@ async function main() {
     console.log(`\n[Channels] ⚠ 渠道情报采集失败: ${e.message}`);
   }
 
-  // 5. 过滤 + 去重 (按 URL)
+  // 8. 过滤 + 去重 (按 URL)
   const seenUrls = new Set();
   const uniqueByUrl = [];
   for (const item of allRawItems) {
@@ -420,7 +637,7 @@ async function main() {
   }
   console.log(`[Dedup] URL 去重后: ${uniqueByUrl.length} 条`);
 
-  // 6. 标题相似度去重 + 交叉验证分组
+  // 9. 标题相似度去重 + 交叉验证分组
   const groups = [];
   for (const item of uniqueByUrl) {
     let matchedGroup = null;
@@ -437,7 +654,7 @@ async function main() {
   }
   console.log(`[Dedup] 标题相似度分组后: ${groups.length} 组\n`);
 
-  // 7. 生成最终文章
+  // 10. 生成最终文章
   const newArticles = [];
   const today = new Date().toISOString().slice(0, 10);
 
@@ -463,9 +680,13 @@ async function main() {
     const fetchChannels = [...new Set(items.map(i => i.fetchSource))];
     const slug = slugify(bestItem.url);
 
+    // 自动分类: 权威源标记为高质量
+    const isAuth = isAuthoritativeSource(extractDomain(bestItem.url));
+    const tag = isAuth ? '权威来源' : '自动采集';
+
     if (!existingSlugs.has(slug) && isRelatedToBingShi(bestItem.title, bestSummary)) {
       newArticles.push({
-        slug, title: bestItem.title, date: bestDate, category: 'news', tag: '自动采集',
+        slug, title: bestItem.title, date: bestDate, category: 'news', tag,
         summary: bestSummary || bestItem.title, source: mainSource, sourceUrl: mainSourceUrl,
         sources: uniqueSources, verified, verifiedBy, fetchChannels, fetchedAt: new Date().toISOString(),
       });
@@ -473,15 +694,16 @@ async function main() {
     }
   }
 
-  // 8. 输出新闻结果
+  // 11. 输出新闻结果
   if (newArticles.length === 0) {
     console.log('[Result] 无新文章');
   } else {
     console.log(`[Result] 新增 ${newArticles.length} 篇:\n`);
     for (const a of newArticles) {
       const verifiedBadge = a.verified ? ' ✅交叉验证' : '';
+      const authBadge = a.tag === '权威来源' ? ' 🏛️' : '';
       const fetchBadge = a.fetchChannels ? ` [${a.fetchChannels.join(', ')}]` : '';
-      console.log(`  + ${a.date}  ${a.title}`);
+      console.log(`  + ${a.date}  ${a.title}${authBadge}`);
       console.log(`    来源: ${a.source}${verifiedBadge}${fetchBadge}`);
       if (a.verified) console.log(`    验证: ${a.verifiedBy.join(' · ')}`);
       console.log();
@@ -492,7 +714,7 @@ async function main() {
     console.log(`[Save] 总计 ${existing.length} 篇文章已保存`);
   }
 
-  // 9. 渠道情报摘要
+  // 12. 渠道情报摘要
   if (channelReport) {
     console.log('\n═ 多媒体渠道情报摘要 ═');
     for (const p of channelReport.platforms) {
@@ -502,6 +724,7 @@ async function main() {
     console.log(`\n  详情: ${CHANNEL_REPORT_PATH}`);
   }
 
+  console.log(`\n  源注册表: ${SOURCE_REGISTRY_PATH}`);
   console.log('\n═══════════════════════════════════════════\n');
 }
 
