@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import articles from '../../data/articles.json';
+import { contentMap } from '../../data/content.js';
+
+export function getStaticPaths() {
+  return articles.filter(a => a.category === 'knowledge').map(a => ({
+    params: { slug: a.slug },
+    props: { article: a },
+  }));
+}
+
+const { article } = Astro.props;
+const content = contentMap[article.slug] || `<p>${article.summary}</p>`;
+const related = articles.filter(a => a.slug !== article.slug && a.category === 'knowledge');
+---
+
+<BaseLayout title={article.title} slug={'knowledge/' + article.slug} breadcrumb={[{label:'冰柿百科',url:'/knowledge/'},{label:article.title}]}>
+  <article>
+    <div class="page-title">
+      <p style="color:#888;font-size:0.85rem;">{article.date} · 百科</p>
+      <h1>{article.title}</h1>
+    </div>
+    <div class="card article-content">
+      <Fragment set:html={content} />
+    </div>
+
+    {related.length > 0 && (
+      <div style="margin-top:28px;">
+        <h2 style="font-size:1.1rem;margin-bottom:12px;">📖 更多百科</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          {related.map(r => (
+            <a href={`/knowledge/${r.slug}`} class="card" style="padding:14px 16px;display:block;font-size:0.85rem;">
+              <h2 style="font-size:0.95rem;margin:0;">{r.title}</h2>
+              <p style="font-size:0.82rem;margin-top:4px;color:#888;">{r.summary.substring(0,50)}…</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </article>
+</BaseLayout>
