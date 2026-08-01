@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import articles from '../../data/articles.json';
+import { contentMap } from '../../data/content.js';
+
+export function getStaticPaths() {
+  return articles.filter(a => a.category === 'news' || a.category === 'enterprise').map(a => ({
+    params: { slug: a.slug },
+    props: { article: a },
+  }));
+}
+
+const { article } = Astro.props;
+const sameCategory = articles.filter(a => a.slug !== article.slug);
+const index = sameCategory.findIndex(a => a.slug === article.slug);
+const prev = index > 0 ? sameCategory[index - 1] : null;
+const next = index < sameCategory.length - 1 ? sameCategory[index + 1] : null;
+const content = contentMap[article.slug] || `<p>${article.summary}</p>`;
+
+// Related articles (same tag, excluding current)
+const related = articles
+  .filter(a => a.slug !== article.slug && a.tag === article.tag)
+  .slice(0, 4);
+---
+
+<BaseLayout title={article.title} slug={'news/' + article.slug} breadcrumb={[{label:'新闻资讯',url:'/news/'},{label:article.title.substring(0,20)+'…'}]}>
+  <article>
+    <div class="page-title">
+      <p style="color:#888;font-size:0.85rem;">
+      	        {article.date}
+      	        <span> · <span class="tag tag-{article.tag}">{article.tag}</span></span>
+      	        {article.source && <span> · 来源: {article.sourceUrl ? <a href={article.sourceUrl} target="_blank" rel="noopener" style="color:#888;">{article.source}</a> : article.source}</span>}
+      	        {article.verified && <span class="verified-badge" title={`已由 ${article.verifiedBy?.join('、')} 交叉验证`}>✅ 交叉验证</span>}
+      	      </p>
+      <h1 style="font-size:1.6rem;line-height:1.5;">{article.title}</h1>
+    </div>
+
+    <div class="card article-content">
+      <Fragment set:html={content} />
+      {article.sourceUrl && (
+        <p style="margin-top:24px;padding-top:16px;border-top:1px solid #f0e8e0;font-size:0.85rem;color:#999;">
+          📎 原文链接：<a href={article.sourceUrl} target="_blank" rel="noopener">{article.sourceUrl}</a>
+        </p>
+      )}
+    </div>
+
+    <!-- Prev/Next -->
+    <div style="display:flex;justify-content:space-between;margin-top:20px;gap:12px;">
+      {prev ? (
+        <a href={`/news/${prev.slug}`} style="flex:1;padding:12px 16px;border:1px solid #f0e8e0;border-radius:8px;font-size:0.85rem;color:#555;transition:all 0.2s;">
+          <div style="font-size:0.75rem;color:#999;margin-bottom:2px;">← 上一篇</div>
+          {prev.title}
+        </a>
+      ) : <span style="flex:1;"></span>}
+      {next ? (
+        <a href={`/news/${next.slug}`} style="flex:1;padding:12px 16px;border:1px solid #f0e8e0;border-radius:8px;font-size:0.85rem;color:#555;text-align:right;transition:all 0.2s;">
+          <div style="font-size:0.75rem;color:#999;margin-bottom:2px;">下一篇 →</div>
+          {next.title}
+        </a>
+      ) : <span style="flex:1;"></span>}
+    </div>
+
+    <!-- Related articles -->
+    {related.length > 0 && (
+      <div style="margin-top:32px;">
+        <h2 style="font-size:1.15rem;margin-bottom:12px;">📌 相关文章</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          {related.map(r => (
+            <a href={`/news/${r.slug}`} class="card" style="padding:14px 16px;display:block;font-size:0.85rem;">
+              <div class="meta">{r.date} · {r.tag}</div>
+              <h2 style="font-size:0.95rem;margin:0;">{r.title}</h2>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </article>
+</BaseLayout>
