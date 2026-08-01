@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="45" fill="#ea580c"/>
+  <text x="50" y="62" font-size="38" text-anchor="middle" fill="#fff" font-family="serif">柿</text>
+  <path d="M35 18 Q50 5 65 18" fill="none" stroke="#15803d" stroke-width="3" stroke-linecap="round"/>
+</svg>
