@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const items = [
+  { title: '柿子做成"冰激凌"，好卖', source: '人民日报', author: '张腾扬', date: '2025-07-14', url: 'https://www.peoplecen.com/html/2025/difang_0714/20869.html' },
+  { title: '树上长出"冰激凌"——保定冰柿"甜蜜逆袭"的故事', source: '长城网·河北日报', author: '霍晓丽 李保健 寇国莹', date: '2025-05-03', url: 'https://heb.hebccw.cn/system/2025/05/03/102059297.shtml' },
+  { title: '保定市：聚焦磨盘柿产业升级发展 加速打造"保定冰柿"核心品牌', source: '网易新闻', date: '2025-06-01', url: 'https://www.163.com/dy/article/JQH8V5C80514EAHV.html' },
+  { title: '河北保定打造特色农产品，柿子做成"冰激凌"，好卖', source: '今日头条', date: '2025-07-12' },
+  { title: '一颗柿子的产业革命——保定冰柿走红记', source: '腾讯新闻', date: '2026-01-20', url: 'https://news.qq.com/rain/a/20260120A01SWJ00' },
+  { title: '从易县到多伦多，15000枚保定冰柿首发出海', source: '河北省人民政府网', date: '2026-04-28', url: 'https://www.hebei.gov.cn/columns/62725381-642a-4327-9196-e1e0923e22bd/202604/28/5a7d072f-c1bb-400e-ac10-503b81245869.html' },
+  { title: '「保定冰柿」全球发布会在易县举行', source: '新华网', date: '2026-04-30', url: 'http://www.he.xinhuanet.com/20260430/e98ced2137ef4665b972af7fb3d322e8/c.html' },
+  { title: '保定冰柿亮相深圳全食展，俄罗斯客商点赞', source: '保定日报', date: '2026-03-13', url: 'https://www.bdxwnet.cn/bdxw/2026/03/13/detail_20260313195364.html' },
+  { title: '保定易县：小柿子"冻"出大产业，冰柿成乡村振兴"黄金果"', source: '澎湃新闻', date: '2025-04-24', url: 'https://www.thepaper.cn/newsDetail_forward_30713848' },
+  { title: '新锐品牌「柿冰冰」首发即引爆，国潮盲盒冰柿情人节出道', source: '新浪财经', date: '2026-02-15', url: 'https://finance.sina.com.cn/tech/roll/2026-02-15/doc-inhmvzfs4214162.shtml' },
+  { title: '「柿小意」保定冰柿：四十年果业底蕴，18道工艺锻造', source: '中华网', date: '2026-02-04', url: 'https://m.tech.china.com/redian/2026/0204/022026_1808179.html' },
+  { title: '「独乐时光」保定冰柿：从太行山走向世界', source: '保定新闻网', date: '2026-05-05', url: 'https://www.bdxwnet.cn/bdxw/2026/05/05/detail_20260505198720.html' },
+];
+---
+
+<BaseLayout title="媒体报道" slug="media/" breadcrumb={[{label:'媒体报道'}]}>
+  <div class="page-title">
+    <h1>📺 媒体报道</h1>
+    <p>权威媒体关于保定冰柿的报道合集 · {items.length} 篇</p>
+  </div>
+  {items.map(item => (
+    <div class="card">
+      <div class="meta">
+        <span class="tag">{item.source}</span>
+        <span>{item.date}</span>
+        {item.author && <span> · {item.author}</span>}
+      </div>
+      {item.url ? (
+        <h2><a href={item.url} target="_blank" rel="noopener">{item.title} ↗</a></h2>
+      ) : (
+        <h2>{item.title}</h2>
+      )}
+    </div>
+  ))}
+  <div style="text-align:center;padding:16px 0;color:#999;font-size:0.85rem;">
+    本站将持续收录更多媒体报道 · 来源包括人民日报、新华网、河北日报、腾讯新闻等
+  </div>
+</BaseLayout>
