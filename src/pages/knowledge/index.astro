@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import articles from '../../data/articles.json';
+
+const knowledge = articles.filter(a => a.category === 'knowledge');
+---
+
+<BaseLayout title="冰柿百科" slug="knowledge/">
+  <div class="page-title">
+    <h1>📖 冰柿百科</h1>
+    <p>关于保定冰柿，你想知道的一切</p>
+  </div>
+  {knowledge.map(item => (
+    <div class="card">
+      <h2><a href={`/knowledge/${item.slug}`}>{item.title}</a></h2>
+      <p>{item.summary}</p>
+    </div>
+  ))}
+</BaseLayout>
