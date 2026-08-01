@@ -1,0 +1,17 @@
+{
+  "name": "icyshi.com",
+  "description": "保定冰柿资讯站 - Baoding Frozen Persimmon Info Hub",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.0.0",
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^5.0.0"
+  }
+}
