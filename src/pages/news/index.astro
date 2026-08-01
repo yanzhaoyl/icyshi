@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import articles from '../../data/articles.json';
+
+const allItems = articles.filter(a => a.category === 'news' || a.category === 'enterprise');
+const tags = [...new Set(allItems.map(a => a.tag))];
+---
+
+<BaseLayout title="新闻资讯" slug="news/" breadcrumb={[{label:'新闻资讯'}]}>
+  <div class="page-title">
+    <h1>📰 新闻资讯</h1>
+    <p>保定冰柿最新资讯、政策动态、企业动态、市场消息</p>
+  </div>
+
+  <!-- Filter tabs -->
+  <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;">
+    <button class="filter-btn active" data-filter="all" style="padding:6px 16px;border:1px solid #ddd;border-radius:6px;background:#fff;cursor:pointer;font-size:0.85rem;color:#555;transition:all 0.2s;">全部</button>
+    {tags.map(tag => (
+      <button class="filter-btn" data-filter={tag} style="padding:6px 16px;border:1px solid #ddd;border-radius:6px;background:#fff;cursor:pointer;font-size:0.85rem;color:#555;transition:all 0.2s;">{tag}</button>
+    ))}
+  </div>
+
+  <div id="articleList">
+    {allItems.map(item => (
+    	      <div class="card article-item" data-tags={item.tag}>
+    	        <div class="meta">
+    	          <span class="tag tag-{item.tag}">{item.tag}</span>
+    	          <span>{item.date}</span>
+    	          {item.source && <span> · 来源: {item.sourceUrl ? <a href={item.sourceUrl} target="_blank" rel="noopener" style="color:#888;">{item.source}</a> : item.source}</span>}
+    	          {item.verified && <span class="verified-badge" title={`已由 ${item.verifiedBy?.join('、')} 交叉验证`}>✅ 交叉验证</span>}
+    	        </div>
+    	        <h2><a href={`/news/${item.slug}`}>{item.title}</a></h2>
+    	        <p>{item.summary}</p>
+    	      </div>
+    	    ))}
+  </div>
+
+  <div id="emptyMsg" style="display:none;text-align:center;padding:48px 0;color:#999;">该分类暂无文章</div>
+</BaseLayout>
+
+<style>
+  .filter-btn.active { background: #c2410c; color: #fff; border-color: #c2410c; }
+  .filter-btn:hover { background: #f5f0eb; }
+  .filter-btn.active:hover { background: #9a3412; }
+</style>
+
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const tag = this.dataset.filter;
+      const items = document.querySelectorAll('.article-item');
+      let count = 0;
+      items.forEach(item => {
+        if (tag === 'all' || item.dataset.tags === tag) {
+          item.style.display = '';
+          count++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      document.getElementById('emptyMsg').style.display = count === 0 ? 'block' : 'none';
+    });
+  });
+</script>
