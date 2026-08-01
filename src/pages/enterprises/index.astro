@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import articles from '../../data/articles.json';
+
+const enterpriseArticles = articles.filter(a => a.category === 'enterprise');
+---
+
+<BaseLayout title="企业品牌" slug="enterprises/" breadcrumb={[{label:'企业品牌'}]}>
+  <div class="page-title">
+    <h1>🏢 企业品牌</h1>
+    <p>据新华网2026年4月报道，保定冰柿加工企业已增至5家；另有速冻食品企业参展冰柿产品，及多方产业配套实体</p>
+  </div>
+
+  <div class="card" style="background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;">
+    <h2 style="margin-top:0;">品牌—厂家对应关系</h2>
+    <p style="font-size:0.9rem;margin-bottom:12px;">以下为公开报道中涉及的主要企业及品牌：</p>
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+        <tr style="background:#c2410c;color:#fff;">
+          <th style="padding:10px 12px;border:1px solid #c2410c;">消费品牌</th>
+          <th style="padding:10px 12px;border:1px solid #c2410c;">生产企业</th>
+          <th style="padding:10px 12px;border:1px solid #c2410c;">所在地</th>
+          <th style="padding:10px 12px;border:1px solid #c2410c;">核心数据</th>
+        </tr>
+        <tr><td style="padding:10px 12px;border:1px solid #ddd;font-weight:700;">独乐时光</td><td style="padding:10px 12px;border:1px solid #ddd;">保定沃隆农业发展有限公司</td><td style="padding:10px 12px;border:1px solid #ddd;">易县独乐乡</td><td style="padding:10px 12px;border:1px solid #ddd;">8条线·年产值1.65亿·6项专利·HACCP认证</td></tr>
+        <tr style="background:#faf9f8;"><td style="padding:10px 12px;border:1px solid #ddd;font-weight:700;">柿妞</td><td style="padding:10px 12px;border:1px solid #ddd;">易县柿柿如意农产品加工有限公司</td><td style="padding:10px 12px;border:1px solid #ddd;">易县</td><td style="padding:10px 12px;border:1px solid #ddd;">冰柿开创者·3500亩基地·2万株古柿树</td></tr>
+        <tr><td style="padding:10px 12px;border:1px solid #ddd;font-weight:700;">柿小意</td><td style="padding:10px 12px;border:1px solid #ddd;">保定市国强农业发展有限公司</td><td style="padding:10px 12px;border:1px solid #ddd;">满城区</td><td style="padding:10px 12px;border:1px solid #ddd;">四十年果业底蕴·投资3000万·百万盒销量</td></tr>
+        <tr style="background:#faf9f8;"><td style="padding:10px 12px;border:1px solid #ddd;font-weight:700;">柿冰冰</td><td style="padding:10px 12px;border:1px solid #ddd;">河北柿冰冰农业发展有限公司</td><td style="padding:10px 12px;border:1px solid #ddd;">保定</td><td style="padding:10px 12px;border:1px solid #ddd;">国潮盲盒冰柿·情人节首发·全渠道布局</td></tr>
+        <tr><td style="padding:10px 12px;border:1px solid #ddd;font-weight:700;">秋色围城</td><td style="padding:10px 12px;border:1px solid #ddd;">保定银虹农业发展有限公司</td><td style="padding:10px 12px;border:1px solid #ddd;">保定</td><td style="padding:10px 12px;border:1px solid #ddd;">省级科技型中小企业·纯天然零添加</td></tr>
+        <tr style="background:#faf9f8;"><td style="padding:10px 12px;border:1px solid #ddd;font-weight:700;">零柿界</td><td style="padding:10px 12px;border:1px solid #ddd;">河北金柿缘农业有限公司</td><td style="padding:10px 12px;border:1px solid #ddd;">易县</td><td style="padding:10px 12px;border:1px solid #ddd;">2025年6月成立·70余亩·1.9万㎡·300人</td></tr>
+        <tr><td style="padding:10px 12px;border:1px solid #ddd;font-weight:700;">—</td><td style="padding:10px 12px;border:1px solid #ddd;">顺平县泰宇农业开发有限公司</td><td style="padding:10px 12px;border:1px solid #ddd;">顺平县</td><td style="padding:10px 12px;border:1px solid #ddd;">年产冰柿2000吨·投资1.05亿·市级龙头</td></tr>
+        <tr style="background:#faf9f8;"><td style="padding:10px 12px;border:1px solid #ddd;font-weight:700;">—</td><td style="padding:10px 12px;border:1px solid #ddd;">易县国腾林果种植农民专业合作社</td><td style="padding:10px 12px;border:1px solid #ddd;">易县</td><td style="padding:10px 12px;border:1px solid #ddd;">协会秘书长单位·社长李旺</td></tr>
+      </table>
+    <p style="font-size:0.85rem;margin-top:8px;color:#666;">注：以上企业与品牌信息源自公开报道汇总，非官方完整名单。</p>
+    </div>
+    <h3 style="margin-top:16px;">其他参展冰柿产品的企业</h3>
+    <p style="font-size:0.9rem;">据河北省人民政府报道（2026年3月），深圳全食展上另有<strong>河北世际德力食品有限公司</strong>展出冰柿系列产品。该公司位于徐水区，成立于2019年，是高新技术企业、专精特新中小企业，主营速冻果蔬。</p>
+    </div>
+  </div>
+
+  <h2 style="margin-top:32px;">🏭 企业详情</h2>
+
+  <div class="card">
+    <h2>保定沃隆农业发展有限公司</h2>
+    <div class="meta">易县独乐乡 · 品牌：独乐时光 · 郭子龙创办</div>
+    <p>冰柿产业先行者与龙头企业。2020年4月成立，2026年获评<strong>市级重点龙头企业</strong>，通过HACCP体系和质量管理体系认证。</p>
+    <p>公司拥有<strong>8条生产线</strong>，日产能2.3万枚，年产值约<strong>1.65亿元</strong>。原料收储量从2024年220万枚激增至2025年<strong>3250万枚</strong>，建成1000余亩标准化种植基地，员工120余人。建有9间专用冷库，库容600吨。</p>
+    <p>拥有<strong>6项国家专利</strong>（含自主研发自动去皮机），2018年起与河北大学、河北农业大学、西北农林科技大学等高校合作，5年多时间攻克精准控温核心技术。2025年牵头成立柿子协会并任会长单位。</p>
+    <p>畅销京津冀、河南、江苏、上海等多地，签约<strong>7个省级代理</strong>，线下终端覆盖300余个网点，线上布局天猫、抖音。2025年全年销售额突破<strong>2200万元</strong>。2026年4月首批15000枚冰柿出口加拿大。</p>
+    <p style="font-size:0.85rem;color:#666;">据官网（bdwlny.com）：注册资本300万元，职工78+人，有机种植基地860+亩。产品涵盖冰柿、柿饼、鲜果、果脯系列。地址：易县中独乐村476号 · 电话：0312-8899999</p>
+  </div>
+
+  <div class="card">
+    <h2>易县柿柿如意农产品加工有限公司</h2>
+    <div class="meta">易县 · 品牌：柿妞 · 王永旺创办</div>
+    <p>冰柿品类<strong>开创者</strong>。创始人王永旺2011年参加中国人民大学乡村建设培训，首创「杯装冰柿、勺挖食用」模式。合作社绿色认证基地<strong>3500亩</strong>，拥有树龄300-500年间的柿树<strong>2万多株</strong>。2023年试产20万个冰柿供不应求。</p>
+    <p>2026年推出迷你冰柿、柿叶面膜等新产品，亮相深圳全食展获俄罗斯客商点赞。牵头550余人合作社，开发柿间小院产品研发中心，衍生柿叶茶、柿子醋、柿子酒及文创产品。</p>
+    <p>王永旺当选<strong>保定市冰柿协会副会长</strong>。（来源：冰柿网）</p>
+  </div>
+
+  <div class="card">
+    <h2>保定市国强农业发展有限公司</h2>
+    <div class="meta">满城区 · 品牌：柿小意</div>
+    <p>脱胎于四十年历史<strong>国强果业</strong>。2026年投建总投资超<strong>3000万元</strong>、占地40亩的冰柿全产业链产业园，整合智能化冷藏库群、数字化脱涩车间、加工中心、研发中心及电商直播基地。</p>
+    <p>18道核心工艺，0添加，气调脱涩技术将糖度提升至18-22度。全年销量突破<strong>百万盒</strong>，复购率45%，获河北省农产品推介会金奖。</p>
+  </div>
+
+  <div class="card">
+    <h2>河北柿冰冰农业发展有限公司</h2>
+    <div class="meta">保定 · 品牌：柿冰冰</div>
+    <p>新锐品牌，2026年2月14日情人节全国首发。以<strong>国潮盲盒</strong>玩法出圈，每杯搭配柿子文化祝福卡，出品6款柿子公仔盲盒。三重口感设计（冰沙+流心+蜜浆）。</p>
+    <p>线下布局品牌形象店、商超专柜、影院餐厅智能终端；线上布局抖音、淘宝、京东、小红书、微信，冷链配送全覆盖。</p>
+  </div>
+
+  <div class="card">
+    <h2>保定银虹农业发展有限公司</h2>
+    <div class="meta">保定 · 品牌：秋色围城 · 负责人侯彪</div>
+    <p>2025年获评<strong>省级科技型中小企业</strong>。坚持纯天然、零添加制作理念。2026年3月亮相深圳全食展，吸引深圳、武汉、郑州、上海等一线城市客户。未来计划推出满城草莓、葡萄等速冻农产品矩阵。</p>
+  </div>
+
+  <div class="card">
+    <h2>保定市柿界新宠农业发展有限公司</h2>
+    <div class="meta">满城区柿子沟 · 法人冉永亮</div>
+    <p>三大龙头企业之一。满城「柿子沟」核心产区主力企业，通过新增生产线与精准控温技术实现规模化生产，同步开发柿子酒、柿子醋等系列产品。</p>
+    <p>依托满城区柿子沟悠久种植传统和「中国磨盘柿之乡」产地优势，与沃隆、柿柿如意并称冰柿产业第一批三大龙头企业。</p>
+    <p>冉永亮同时担任<strong>满城区神星镇马连川村股份经济合作社社长</strong>、保定市冰柿协会副会长。（来源：冰柿网）</p>
+  </div>
+
+  <div class="card">
+    <h2>顺平县泰宇农业开发有限公司</h2>
+    <div class="meta">顺平县蒲上镇 · 总经理石洪亮 · 冰柿协会副会长单位</div>
+    <p>顺平县冰柿产业代表企业，总经理<strong>石洪亮</strong>当选保定市冰柿协会副会长。（来源：冰柿网）</p>
+    <p>2025年投资建设年产冰柿<strong>2000吨</strong>、果脯冻干100吨项目，项目选址顺平县蒲上镇高胜蒲村，总投资约<strong>1.05亿元</strong>。（来源：搜狐新闻/顺平县政府网）</p>
+    <p>拥有6个注册商标，2026年被评为<strong>市级农业产业化重点龙头企业</strong>。（来源：企查查）</p>
+  </div>
+
+  <div class="card">
+    <h2>保定市满城区神星镇马连川村股份经济合作社</h2>
+    <div class="meta">满城区神星镇 · 社长冉永亮 · 冰柿协会副会长单位</div>
+    <p>村集体经济组织，社长<strong>冉永亮</strong>当选保定市冰柿协会副会长。马连川村位于神星镇西偏北6.5公里，为山区地貌，总耕地面积232亩，以磨盘柿种植为主要产业。（来源：冰柿网/地名信息）</p>
+    <p>冉永亮同时为保定市柿界新宠农业发展有限公司法人代表，负责满城柿子沟冰柿加工企业的运营管理。（来源：冰柿网）</p>
+  </div>
+
+  <div class="card">
+    <h2>易县国腾林果种植农民专业合作社</h2>
+    <div class="meta">易县 · 社长李旺 · 冰柿协会秘书长单位</div>
+    <p>社长<strong>李旺</strong>当选保定市冰柿协会秘书长。（来源：冰柿网）李旺同时担任<strong>易县盘柿源农业服务专业合作社联合社</strong>理事长，牵头11村联合的种植端联合社。（来源：冰柿网）</p>
+  </div>
+
+  <div class="card" style="background:linear-gradient(135deg,#f5f5f4,#e7e5e4);border-color:#a8a29e;">
+    <h2>河北世际德力食品有限公司</h2>
+    <div class="meta">徐水区 · 负责人闫满常 · 官网：shijidelifood.com（当前不可访问）</div>
+    <p>成立于2019年7月，位于保定市徐水区，是一家集种植、加工、储藏、冷链物流、销售为一体的大型速冻食品企业。<strong>高新技术企业、专精特新中小企业</strong>（百度百科）。注册资本<strong>9000万元</strong>，总资产超2亿元，占地面积100亩，种植基地15万亩，年产能10万吨（百度百科）。</p>
+    <p>旗下拥有<strong>「世际德力」「德力」「帝王宴」</strong>三大品牌，主营速冻果蔬、甜糯玉米等产品（百度百科）。传承30多年速冻鲜食玉米与果蔬加工经验，取得BRC、HACCP、ISO9001、GLOBAL GAP、KOSHER等多项认证（百度百科）。采取"公司+专业合作组织+农户+基地+标准化管理"模式，带动3-5万多户农户增收（百度百科）。</p>
+    <p>据河北省人民政府报道，该公司于2026年3月携冰柿系列产品亮相深圳第二十六届全食展，有客户现场敲定采购细节。</p>
+  </div>
+
+  <div class="card">
+    <h2>河北金柿缘农业有限公司</h2>
+    <div class="meta">易县易州镇 · 品牌：零柿界 · 创始人赵恒龙</div>
+    <p>2025年6月成立，专注柿果全产业链融合发展，旗下品牌<strong>「零柿界」</strong>。占地70余亩，建筑总面积1.9万㎡，专业团队<strong>300余名</strong>（零柿界官网/网易号）。建设有10万m³大型冷藏库+2000㎡保鲜库，配备十万级无菌车间（网易号）。</p>
+    <p>聘请专家研发冰柿削皮机，原材料损耗控制在<strong>20%以内</strong>。智能冷库采用分阶段精准控温，实现"冰沙细腻、甜润不涩"口感（网易号）。与中国农业大学、燕山大学、河北农业大学等高校合作开展产学研（零柿界官网/网易号）。</p>
+    <p>构建"农户+党建合作社+企业+平台销售"的产业生态（网易号）。2026-2027年目标产能突破<strong>3000万枚</strong>，中期计划开发柿叶茶、柿子饮料、柿子酒等衍生产品（零柿界官网）。已与美国、韩国、东南亚等渠道商建立合作联系（零柿界官网）。</p>
+  </div>
+
+  <h2 style="margin-top:32px;">🏗️ 产业基础设施</h2>
+
+  <div class="card" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-color:#86efac;">
+    <h2>河北泰丰农业科技发展有限公司（泰丰农投）</h2>
+    <div class="meta">易县 · 国有平台 · 共享产业园建设运营方</div>
+    <p>易县国有平台公司，与经开区联手建设<strong>190亩冰柿共享产业园</strong>。项目申请<strong>1.34亿专债资金</strong>，一期建设40亩标准化共享生产车间、冷库、办公楼，配备全自动设备、电商直播基地、物流配套设施。同时整合资金<strong>2800余万元</strong>购置全自动冰柿生产加工设备。</p>
+    <p>泰丰农投开创了「国有平台建设+企业租赁使用」的共享模式，大幅降低中小微企业的基建和设备负担，已吸引沃隆农业等企业入驻。这一模式被保定市作为产业创新典型推广。</p>
+  </div>
+
+  <div class="card" style="background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;">
+    <h2>易县盘柿源农业服务专业合作社联合社</h2>
+    <div class="meta">易县独乐乡 · 理事长李旺 · 11个村联合</div>
+    <p>2025年8月21日，由寨子村党支部牵头，联合独乐乡裴庄村、康家庄村，狼牙山镇戊子村、东岱岭村、上隘刹村共6个村组建。由寨子村党支部书记<strong>李旺</strong>担任联合社理事长。目前联合社成员单位已扩展至<strong>11个村</strong>。</p>
+    <p>李旺同时当选<strong>保定市冰柿协会秘书长</strong>（易县国腾林果种植农民专业合作社社长），负责协会日常事务协调。（来源：冰柿网）</p>
+    <p>联合社以「党建+合作社+农户」模式统一管理柿树种植、农资供应、技术培训和鲜柿收购，为冰柿加工企业提供稳定、标准化的原料供应，形成「种植端联合社+加工端龙头企业」的紧密协作链条。</p>
+  </div>
+
+  <h2 style="margin-top:32px;">📰 相关文章</h2>
+  {enterpriseArticles.map(item => (
+  	    <div class="card">
+  	      <div class="meta">
+  	        <span class="tag tag-{item.tag}">{item.tag}</span><span> · {item.date}</span>
+  	        {item.source && <span> · 来源: {item.sourceUrl ? <a href={item.sourceUrl} target="_blank" rel="noopener" style="color:#888;">{item.source}</a> : item.source}</span>}
+  	        {item.verified && <span class="verified-badge" title={`已由 ${item.verifiedBy?.join('、')} 交叉验证`}>✅ 交叉验证</span>}
+  	      </div>
+  	      <h2><a href={`/news/${item.slug}`}>{item.title}</a></h2>
+  	      <p>{item.summary}</p>
+  	    </div>
+  	  ))}
+</BaseLayout>
