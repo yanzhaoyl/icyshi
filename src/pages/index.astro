@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import articles from '../data/articles.json';
+
+const recentNews = articles.filter(a => a.category === 'news').sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
+const brands = articles.filter(a => a.category === 'enterprise').slice(0, 4);
+const knowledge = articles.filter(a => a.category === 'knowledge');
+---
+
+<BaseLayout slug=''>
+  <!-- Hero -->
+  <section style="text-align:center;padding:48px 0 36px;border-radius:16px;margin-bottom:32px;">
+    <div style="font-size:3.2rem;margin-bottom:12px;">🍊</div>
+    <h1 style="font-size:2.4rem;margin-bottom:8px;background:linear-gradient(135deg,#c2410c,#ea580c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+      保定冰柿
+    </h1>
+    <p style="font-size:1.2rem;color:#666;max-width:500px;margin:0 auto 6px;">
+      柿子做成的冰激凌
+    </p>
+    <p style="font-size:0.85rem;color:#999;margin-bottom:24px;">
+      保定市区域公用品牌 · 聚合产业资讯 · 传播冰柿文化
+    </p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="/news/" style="padding:10px 24px;background:#c2410c;color:#fff;border-radius:8px;font-size:0.9rem;">浏览资讯</a>
+      <a href="/knowledge/" style="padding:10px 24px;background:#fff;color:#c2410c;border:1px solid #fdba74;border-radius:8px;font-size:0.9rem;">了解冰柿</a>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:32px;">
+    <div class="card" style="text-align:center;padding:18px 10px;">
+      <div style="font-size:1.5rem;font-weight:700;color:#c2410c;">12家</div>
+      <div style="font-size:0.78rem;color:#888;">加工主体</div>
+      <div style="font-size:0.65rem;color:#bbb;margin-top:2px;"><a href="/news/hebei-tv-q1-2026" style="color:#bbb;text-decoration:underline;">河北台 2026-05</a></div>
+    </div>
+    <div class="card" style="text-align:center;padding:18px 10px;">
+      <div style="font-size:1.5rem;font-weight:700;color:#c2410c;">35条</div>
+      <div style="font-size:0.78rem;color:#888;">生产线</div>
+      <div style="font-size:0.65rem;color:#bbb;margin-top:2px;"><a href="/news/global-launch-2026" style="color:#bbb;text-decoration:underline;">新华网 2026-04</a></div>
+    </div>
+    <div class="card" style="text-align:center;padding:18px 10px;">
+      <div style="font-size:1.5rem;font-weight:700;color:#c2410c;">8750万</div>
+      <div style="font-size:0.78rem;color:#888;">年产能（枚）</div>
+      <div style="font-size:0.65rem;color:#bbb;margin-top:2px;"><a href="/news/global-launch-2026" style="color:#bbb;text-decoration:underline;">北京日报 2026-04</a></div>
+    </div>
+    <div class="card" style="text-align:center;padding:18px 10px;">
+      <div style="font-size:1.5rem;font-weight:700;color:#c2410c;">626万</div>
+      <div style="font-size:0.78rem;color:#888;">Q1 产量（枚）</div>
+      <div style="font-size:0.65rem;color:#bbb;margin-top:2px;"><a href="/news/hebei-tv-q1-2026" style="color:#bbb;text-decoration:underline;">河北台 +96%</a></div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:36px;">
+    <div class="card" style="text-align:center;padding:24px 16px;">
+      <div style="font-size:1.8rem;margin-bottom:8px;">🥶</div>
+      <h3 style="margin:0 0 6px;font-size:1rem;">🍬 天然糖化</h3>
+      <p style="font-size:0.82rem;color:#888;margin:0;">物理脱涩梯度糖化，甜而不腻</p>
+    </div>
+    <div class="card" style="text-align:center;padding:24px 16px;">
+      <div style="font-size:1.8rem;margin-bottom:8px;">🍦</div>
+      <h3 style="margin:0 0 6px;font-size:1rem;">勺挖即食</h3>
+      <p style="font-size:0.82rem;color:#888;margin:0;">像吃冰激凌一样吃柿子，方便不脏手</p>
+    </div>
+    <div class="card" style="text-align:center;padding:24px 16px;">
+      <div style="font-size:1.8rem;margin-bottom:8px;">🌍</div>
+      <h3 style="margin:0 0 6px;font-size:1rem;">出口海外</h3>
+      <p style="font-size:0.82rem;color:#888;margin:0;">已出口加拿大，全球市场布局中</p>
+    </div>
+  </div>
+
+  <!-- Latest News -->
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+    <h2 style="margin:0;">📰 最新动态</h2>
+    <a href="/news/" style="font-size:0.85rem;color:#c2410c;">查看全部 →</a>
+  </div>
+  {recentNews.map(item => (
+    <div class="card">
+      <div class="meta"><span class="tag tag-{item.tag}">{item.tag}</span><span>{item.date}</span></div>
+      <h2><a href={`/news/${item.slug}`}>{item.title}</a></h2>
+      <p>{item.summary}</p>
+    </div>
+  ))}
+
+  <!-- Brands & Knowledge -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px;">
+    <div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <h2 style="margin:0;">🏢 品牌故事</h2>
+        <a href="/enterprises/" style="font-size:0.85rem;color:#c2410c;">全部 →</a>
+      </div>
+      {brands.map(item => (
+        <div class="card" style="padding:16px 18px;">
+          <div class="meta">{item.date}</div>
+          <h2 style="font-size:1rem;"><a href={`/news/${item.slug}`}>{item.title}</a></h2>
+        </div>
+      ))}
+    </div>
+    <div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <h2 style="margin:0;">📖 冰柿百科</h2>
+        <a href="/knowledge/" style="font-size:0.85rem;color:#c2410c;">全部 →</a>
+      </div>
+      {knowledge.map(item => (
+        <div class="card" style="padding:16px 18px;">
+          <h2 style="font-size:1rem;"><a href={`/knowledge/${item.slug}`}>{item.title}</a></h2>
+          <p style="font-size:0.85rem;">{item.summary}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Subscribe -->
+  <div class="card" style="text-align:center;margin-top:32px;background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;">
+    <h2 style="margin-top:0;font-size:1.2rem;">📬 订阅更新</h2>
+    <p style="color:#666;font-size:0.85rem;">第一时间获取保定冰柿最新资讯</p>
+    <form id="subscribeForm" style="display:flex;gap:8px;max-width:400px;margin:14px auto 0;">
+      <input type="email" id="subEmail" placeholder="输入邮箱地址" required
+        style="flex:1;padding:10px 16px;border:1px solid #fdba74;border-radius:8px;font-size:0.9rem;outline:none;" />
+      <button type="submit"
+        style="padding:10px 20px;background:#c2410c;color:#fff;border:none;border-radius:8px;font-size:0.9rem;cursor:pointer;">
+        订阅
+      </button>
+    </form>
+    <p id="subMsg" style="font-size:0.82rem;margin:8px 0 0;display:none;"></p>
+  </div>
+</BaseLayout>
+
+<script>
+  document.getElementById('subscribeForm')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const email = document.getElementById('subEmail').value;
+    const msg = document.getElementById('subMsg');
+    const btn = this.querySelector('button');
+    btn.disabled = true; btn.textContent = '提交中...';
+    try {
+      const resp = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await resp.json();
+      msg.textContent = data.success ? '✅ ' + data.message : '❌ ' + (data.error || '订阅失败');
+      msg.style.color = data.success ? '#16a34a' : '#dc2626';
+      if (data.success) document.getElementById('subEmail').value = '';
+    } catch {
+      msg.textContent = '❌ 网络错误，请稍后重试';
+      msg.style.color = '#dc2626';
+    }
+    msg.style.display = 'block';
+    btn.disabled = false; btn.textContent = '订阅';
+  });
+</script>
