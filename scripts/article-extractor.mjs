@@ -56,18 +56,63 @@ function extractCandidateBlocks(html) {
   return candidates.map(c => c.html);
 }
 
+/** 判断一段文本是否属于页面噪声（导航、版权、推荐、广告等） */
 function isNoiseParagraph(p) {
   const text = p.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
   if (!text) return true;
   if (text.length < 15) return true;
-  if ((text.match(/&nbsp;/g) || []).length * 6 / text.length > 0.3) return true;
+  // 大量 &nbsp; 填充
+  if ((text.match(/&nbsp;/g) || []).length * 6 / Math.max(text.length, 1) > 0.3) return true;
   const noisePatterns = [
     /网站简介\s*[|｜]\s*版权声明\s*[|｜]\s*联系方式/,
     /版权所有[:：]/,
     /主办[:：]/,
-    /^(点赞\s*\+1|微博|微信|分享)$/,
+    /承办[:：]/,
+    /协办[:：]/,
+    /^(点赞\s*\+1|微博|微信|分享|QQ空间)$/,
     /^\d+\s*[\.、]\s*.+?(推荐|排行榜|攻略|测评|解读|实测)/,
     /(宠物鱼油|板材十大|证券开户|窗帘品牌|燕窝哪个|高中网课|建军|强军)/,
+    /(百度首页|登录|搜索|复制|举报\s*\/\s*反馈)/,
+    /\[email\s+protected\]/,
+    /\|+\s*(中国政府网|河北省人民政府|保定市人民政府|网站首页|设为首页|加入收藏|无障碍|长者模式)/,
+    /(字体：|字号：|大\s*中\s*小)/,
+    /^来源：.*(冰柿网|晚报|日报|新闻网|人民网|新华网|中新网|央广网|新浪|网易|搜狐|凤凰|腾讯)/,
+    /(招考|招聘|试题|高考|中考|考研|留学)/,
+    /(期货|股票|基金|理财|投资|行情)/,
+    /(装修|建材|家具|家电|楼盘)/,
+    /(保险|信用卡|贷款|还款)/,
+    /(医院|诊所|药品|养生|保健)/,
+    /(游戏|电竞|体育|赛事|比分)/,
+    /(娱乐|明星|八卦|综艺|影视)/,
+    /(买车|二手车|驾校|违章)/,
+    /(手机|数码|笔记本|平板|相机)/,
+    /(旅游|酒店|机票|景点|民宿)/,
+    /(美食|菜谱|餐厅|外卖)/,
+    /(婚纱|摄影|婚礼|婚庆)/,
+    /(化妆品|美容|美发|美甲)/,
+    /(宠物|狗狗|猫咪|宠物医院)/,
+    /(母婴|育儿|早教|怀孕)/,
+    /(留学|移民|签证|出国)/,
+    /(法律|律师|法律咨询|诉讼)/,
+    /(房产|租房|买房|二手房)/,
+    /(家具|家电|装修|建材)/,
+    /(二手车|汽车|驾校|违章)/,
+    /(游戏|手游|电竞|网游)/,
+    /(招聘|求职|找工作|简历)/,
+    /(天气|空气质量|预报)/,
+    /(举报|投诉|热线|客服)/,
+    /更多精彩资讯请在应用市场下载/,
+    /欢迎提供新闻线索/,
+    /24小时报料热线/,
+    /消费者也可通过/,
+    /啄木鸟消费者投诉平台/,
+    /版权声明：本文章版权/,
+    /不尊重原创的行为我们将追究责任/,
+    /转载请联系：/,
+    /手机看\s*$|扫码分享至微信|微信好友|新浪微博|复制链接/,
+    /^[\s\xa0]*$/,
+    /当前位置：\s*首页/,
+    /首页\s*>>\s*/,
   ];
   return noisePatterns.some(re => re.test(text));
 }
@@ -90,7 +135,7 @@ function paragraphsFromHtml(html) {
   if (current.trim()) paragraphs.push(current.trim());
   return paragraphs.filter(p => {
     const textOnly = p.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
-    return textOnly.length >= 15 && textOnly.replace(/[^\u4e00-\u9fa5]/g, '').length >= 8 && !isNoiseParagraph(p);
+    return textOnly.length >= 20 && textOnly.replace(/[^\u4e00-\u9fa5a-zA-Z0-9]/g, '').length >= 10 && !isNoiseParagraph(p);
   });
 }
 
