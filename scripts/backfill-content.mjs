@@ -15,7 +15,19 @@ console.log(`[Backfill] 需要补齐正文的文章: ${missing.length} 篇`);
 const BATCH = 10;
 const toFill = missing.slice(0, BATCH);
 
+function normalizeSourceUrl(url) {
+  try {
+    if (url.startsWith('/link?') || url.startsWith('http')) {
+      const u = new URL(url, 'https://www.baidu.com');
+      const real = u.searchParams.get('url');
+      if (real) return decodeURIComponent(real);
+    }
+  } catch {}
+  return url;
+}
+
 for (const article of toFill) {
+  article.sourceUrl = normalizeSourceUrl(article.sourceUrl);
   const content = await extractArticleContent(article.sourceUrl);
   if (content) {
     map[article.slug] = content;
