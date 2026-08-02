@@ -180,6 +180,19 @@ function extractRealUrl(url) {
   return url;
 }
 
+function extractDateFromSource(url, fallback) {
+  try {
+    const realUrl = extractRealUrl(url);
+    // 模式1: /2026/07/17
+    const m1 = realUrl.match(/\/(20\d{2})\/(\d{2})\/(\d{2})\b/);
+    if (m1) return `${m1[1]}-${m1[2]}-${m1[3]}`;
+    // 模式2: -20260717- 或 _20260717_ 或 20260717
+    const m2 = realUrl.match(/[-_]?(20\d{2})(\d{2})(\d{2})[-_]?/);
+    if (m2) return `${m2[1]}-${m2[2]}-${m2[3]}`;
+  } catch {}
+  return fallback || null;
+}
+
 function isAuthoritativeSource(domain) {
   return AUTHORITATIVE_DOMAINS.some(d => domain.includes(d));
 }
@@ -686,7 +699,12 @@ async function main() {
   for (const group of groups) {
     const items = group.items;
     const bestItem = items.reduce((best, cur) => cur.title.length > best.title.length ? cur : best, items[0]);
-    const bestDate = items.map(i => i.date).sort()[0] || today;
+    let bestDate = items.map(i => i.date).sort()[0] || today;
+    // 如果日期仍是今天，尝试从 sourceUrl 提取真实日期
+    if (bestDate === today) {
+      const urlDate = extractDateFromSource(bestItem.url, null);
+      if (urlDate) bestDate = urlDate;
+    }
     const summaries = items.map(i => i.summary).filter(Boolean);
     const bestSummary = summaries[0] || '';
     const itemWithSource = items.find(i => i.sourceName && i.sourceName !== '网络') || bestItem;
