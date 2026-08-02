@@ -170,10 +170,13 @@ async function fillArticleContent(article) {
 }
 
 function extractRealUrl(url) {
-  const baiduMatch = url.match(/[?&]url=([^&]+)/);
-  if (baiduMatch) { try { return decodeURIComponent(baiduMatch[1]); } catch {} }
-  const soMatch = url.match(/[?&]url=([^&]+)/);
-  if (soMatch) { try { return decodeURIComponent(soMatch[1]); } catch {} }
+  try {
+    if (url.startsWith('/link?') || url.startsWith('http')) {
+      const u = new URL(url, 'https://www.baidu.com');
+      const real = u.searchParams.get('url');
+      if (real) return decodeURIComponent(real);
+    }
+  } catch {}
   return url;
 }
 
