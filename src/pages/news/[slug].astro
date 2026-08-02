@@ -15,7 +15,8 @@ const sameCategory = articles.filter(a => a.slug !== article.slug);
 const index = sameCategory.findIndex(a => a.slug === article.slug);
 const prev = index > 0 ? sameCategory[index - 1] : null;
 const next = index < sameCategory.length - 1 ? sameCategory[index + 1] : null;
-const content = contentMap[article.slug] || `<p>${article.summary}</p>`;
+const rawContent = contentMap[article.slug];
+const content = rawContent && rawContent.length > 60 ? rawContent : `<p>${article.summary || article.title}</p>`;
 
 // Related articles (same tag, excluding current)
 const related = articles

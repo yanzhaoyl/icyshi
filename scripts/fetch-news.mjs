@@ -38,11 +38,13 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { extractArticleContent, loadContentMap, saveContentMap } from './article-extractor.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = join(__dirname, '..', 'src', 'data', 'articles.json');
 const CHANNEL_REPORT_PATH = join(__dirname, '..', 'src', 'data', 'channel-report.json');
 const SOURCE_REGISTRY_PATH = join(__dirname, '..', 'src', 'data', 'source-registry.json');
+const CONTENT_PATH = join(__dirname, '..', 'src', 'data', 'content.js');
 
 // ============================================================
 // 配置
@@ -145,6 +147,26 @@ function stripHtml(str) {
     .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ')
     .replace(/\s+/g, ' ').trim();
+}
+
+function escapeTemplate(s) {
+  return s.replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/\$/g, '\\$');
+}
+
+async function fillArticleContent(article) {
+  const { map } = loadContentMap();
+  if (map[article.slug]) return;
+  const content = await extractArticleContent(article.sourceUrl);
+  if (content) {
+    map[article.slug] = content;
+    saveContentMap(map);
+    console.log(`  [Content] 已抓取正文: ${article.title.slice(0, 30)}`);
+  } else {
+    const fallback = `<p>${escapeTemplate(article.summary || article.title)}</p><p>（原文来源：${article.source}）</p>`;
+    map[article.slug] = fallback;
+    saveContentMap(map);
+    console.log(`  [Content] 使用摘要 fallback: ${article.title.slice(0, 30)}`);
+  }
 }
 
 function extractRealUrl(url) {
@@ -714,7 +736,14 @@ async function main() {
     console.log(`[Save] 总计 ${existing.length} 篇文章已保存`);
   }
 
-  // 12. 渠道情报摘要
+  // 12. 抓取/补齐新文章正文
+  console.log(`\n[Content] 开始抓取/补齐 ${newArticles.length} 篇正文`);
+  for (const article of newArticles) {
+    await fillArticleContent(article);
+    await sleep(INTER_REQUEST_DELAY);
+  }
+
+  // 13. 渠道情报摘要
   if (channelReport) {
     console.log('\n═ 多媒体渠道情报摘要 ═');
     for (const p of channelReport.platforms) {
