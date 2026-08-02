@@ -16,7 +16,24 @@ const index = sameCategory.findIndex(a => a.slug === article.slug);
 const prev = index > 0 ? sameCategory[index - 1] : null;
 const next = index < sameCategory.length - 1 ? sameCategory[index + 1] : null;
 const rawContent = contentMap[article.slug];
-const content = rawContent && rawContent.length > 60 ? rawContent : `<p>${article.summary || article.title}</p>`;
+const content = rawContent && rawContent.length > 60 ? rawContent : `<p>${article.summary || article.title}</p><p style="color:#999;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`;
+
+// 格式化日期为中文
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  const parts = dateStr.split('-');
+  if (parts.length === 3) return `${parts[0]}年${parts[1]}月${parts[2]}日`;
+  return dateStr;
+}
+
+// 估算阅读时间
+function estimateReadingTime(html) {
+  const text = (html || '').replace(/<[^>]+>/g, '');
+  const chars = text.length;
+  const mins = Math.max(1, Math.ceil(chars / 500));
+  return mins;
+}
+const readTime = estimateReadingTime(content);
 
 // Related articles (same tag, excluding current)
 const related = articles
@@ -28,8 +45,9 @@ const related = articles
   <article>
     <div class="page-title">
       <p style="color:#888;font-size:0.85rem;">
-      	        {article.date}
+      	        {formatDate(article.date)}
       	        <span> · <span class="tag tag-{article.tag}">{article.tag}</span></span>
+      	        <span> · 阅读约{readTime}分钟</span>
       	        {article.source && <span> · 来源: {article.sourceUrl ? <a href={article.sourceUrl} target="_blank" rel="noopener" style="color:#888;">{article.source}</a> : article.source}</span>}
       	        {article.verified && <span class="verified-badge" title={`已由 ${article.verifiedBy?.join('、')} 交叉验证`}>✅ 交叉验证</span>}
       	      </p>
