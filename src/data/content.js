@@ -406,18 +406,57 @@ export const contentMap = {
     <h3>利益联结机制</h3>
     <p>推行<strong>「托管服务+二次分红」</strong>模式，合作社或龙头企业收购鲜柿加工销售后，依据交易量向村级合作社进行「二次返利」，让农户直接分享产业链的增值红利。</p>
   `,
-  'capacity-2026': `
-    <p>2026年1月最新数据显示，保定冰柿产业规模实现跨越式增长：</p>
-    <ul>
-      <li><strong>生产线</strong>：35条</li>
-      <li><strong>年产能</strong>：7250万枚（35条线全部投产后）</li>
-      <li><strong>综合产值</strong>：易县磨盘柿综合产值达5亿元</li>
-      <li><strong>就业带动</strong>：200余名村民就业，留守妇女、脱贫户占比超七成</li>
-      <li><strong>人均增收</strong>：年增收超2万元</li>
-      <li><strong>单月产销</strong>：突破44万枚</li>
-    </ul>
-  `,
-  'output-2025': `<p>河北省保定市创新打造冰柿产品，让柿子成为推动乡村全面振兴、促进群众增收的新动力。2025年，保定冰柿预计上市约320万个，产业产值约3200万元。保定冰柿凭借独特口感、绿色品质和四季销售优势走俏市场。</p><p>保定是全国柿子七大主产区之一，磨盘柿种植面积27.8万亩，年产量约50万吨，占全国的12%。</p>`,
+  'capacity-2026': `<p>易县冰柿生产企业正在加工冰柿。易县县委组织部供图</p>
+<p>1月19日，易县太行山区的万亩柿园褪去了秋日的橙红，山野显得空旷宁静。山脚下的冰柿加工车间内，却是另一派火热景象。</p>
+<p>清洗、去皮、装盒、速冻……自动化流水线匀速运转，一枚枚橙黄的磨盘柿列队前行，在工人娴熟的操作中，完成从枝头鲜果到杯装“冰激凌”的蜕变。</p>
+<p>这冬日里生产线上升腾的生机，正是改革持续赋能带来的直观改变。一颗曾面临“卖难”的山间野果，正循着现代化产业的轨迹，走出深山，迈向广阔市场，蜕变为撬动乡村振兴的“黄金果”。</p>
+<strong> ■ 技术破冰 从“应季销售”到“全年供应”
+<p>数九隆冬，寒意渐浓。易县的磨盘柿产业，也曾经历一场漫长的“寒冬”。</p>
+<p>作为“中国磨盘柿之乡”，易县虽坐拥11.3万亩种植规模、年产量约25万吨的庞大基础，却长期被困于“增产不增收”的怪圈。</p>
+<p>“鲜柿保鲜难、销售周期短，总是卖不上好价钱。”保定沃隆农业发展有限公司负责人郭子龙回忆，“最低谷时，一斤柿子卖不到三毛钱，看着柿子烂在地里，心里不是滋味。”</p>
+<p>转变，始于一场以科技变革为核心的“破冰行动”。</p>
+<p>当地政府搭建“政产学研用”协同创新平台，打破体制机制壁垒，引导龙头企业与中国农业大学、河北农业大学等科研力量深度对接，共同攻坚产业瓶颈。</p>
+<p>其中最关键的突破，在于对“温度”的精准掌控。“冻温高一度，口感软烂；低一度，就破坏纤维。必须将误差控制在0.5℃以内。”郭子龙介绍。通过自主研发的“梯度降温法”等工艺，鲜柿的保质期从以天计算跃升至以年衡量，实现从“应季销售”到“全年供应”的根本跨越，为产业价值跃升打开了关键突破口。</p>
+<p>技术突破带来好产品，但好产品如何卖出好价钱？</p>
+<p>保定市以系统性改革破题，跳出“就产品卖产品”的思维方式，从品牌顶层设计、消费场景创新等多维度发力，推动产业从“卖原料”向“卖品牌”升级，打造特色IP。</p>
+<p>“我们不是简单卖柿子，而是打造一种新的消费体验。”易县柿柿如意农产品加工有限公司负责人王永旺拿起一盒包装精美的冰柿产品介绍道，“像吃杯装冰激凌一样，用勺挖着吃，这个创意解决了吃柿子容易流汁的尴尬，也让产品有了记忆点。”</p>
+<p>借着这股东风，磨盘柿的另一主产区满城“柿子沟”也抓住了升级契机。保定市柿界新宠农业发展有限公司迅速行动，通过新增生产线与精准控温技术，实现冰柿规模化生产，并以此为核心，在保留传统品种风味的同时，带动了柿子酒、柿子醋等系列产品的开发，共同夯实了“保定冰柿”的品牌基础，提升了IP价值。</p>
+<p>名声打响后，立体化的传播与销售渠道迅速铺开。</p>
+<p>线上，直播矩阵将产品直接送达消费者；线下，产品成功进驻盒马鲜生等高端商超。同时，当地连续举办柿子产业发展大会，积极亮相中国国际消费品博览会等国家级展会，“保定冰柿”品牌知名度与美誉度节节攀升，推动保定冰柿产业沿着“科技化、规范化、品牌化”的改革路径扎实迈进。</p>
+<p>最新数据显示，截至2025年12月，全市依托“冰柿共享产业园”等新型载体所培育的产业生态已然成型，保定沃隆、易县柿柿如意、满城柿界新宠3家龙头企业已正式投产，近期单月产销即突破44万枚，并将数千万枚意向订单转化为确定性订单，成功打入北京、上海高端市场及香港特区，全国布局加速成形。</p>
+<p>技术与品牌可以打造爆款，但要让产业真正扎根乡土、惠及千家万户，改革必须向纵深推进，构建更深层的制度保障。</p>
+<p>易县创新构建“党建引领、部门协同、村级主体、农户参与”的运行机制，成立产业联合社党支部，并选派懂政策的业务骨干担任“第一书记”，为农户提供从技术指导到销售对接的全流程支持。</p>
+<p>更为关键的是，当地建立紧密的利益联结机制，普遍推行“托管服务+二次分红”模式。</p>
+<p>合作社或龙头企业在收购鲜柿进行加工销售后，会依据交易量向村级合作社进行“二次返利”，让农户直接分享产业链的增值红利。</p>
+<p>“现在一年有两笔收入，一笔是卖柿子的钱，一笔是合作社的分红。”易县独乐乡村民韩志花笑着说，“自家几百棵柿树，以前租出去，现在自己管，年收入翻了一番还不止。”</p>
+<p>稳定的产业和清晰的收益，也激发了人才的“回流”。通过建立农业职业经理人和科技特派员包联服务机制，全县培育一批“新农人”，为产业发展注入新鲜血液。</p>
+<p>如今，冰柿加工厂已成为社区的“就业车间”，吸纳了200余名村民就近就业，其中留守妇女、脱贫户占比超过七成，人均年增收超2万元。</p>
+<p>冬至在月头，春节不穿袄。这份对温暖的朴素期盼，已提前照进易县柿农的现实。</p>
+<p>“今年35条生产线全部投产后，年产能将达到7250万枚。”易县农业农村局王芳介绍说。在冰柿产业的带动下，全县磨盘柿综合产值已达5亿元。</p>
+<p>车间内，自动化生产线有序运转，身着工装的村民们正熟练地进行最后工序；窗外，冬日的太行山田野静穆辽阔，昔日枝头的“小红灯笼”，已悉数转化为生产线上的火热与百姓账本上的喜悦。</p>
+<p>从“论筐卖”的土产到“论颗卖”的精品，小小柿子价值跃升的轨迹，清晰标刻出传统农业改革破局的方向；而这冬日里轰鸣不息的生产线，正是改革持续赋能之下，乡村走向丰饶未来的响亮先声。</p>`,
+  'output-2025': `<p>在易县柿柿如意农产品加工有限公司库房，一筐筐冷冻柿子整齐码放。</p>
+<p>保定沃隆农业发展有限公司冰柿加工车间内，工人正在为覆膜做准备。</p>
+<p>颜色橙黄，表皮结霜，冰柿散发诱人香气。吃上一口冷冻的果肉，舌尖触感细腻绵软、清凉冰爽，像是在吃冰激凌。</p>
+<p>2024年底召开的中央农村工作会议提出，要推动乡村产业提质增效，做好&ldquo;土特产&rdquo;文章，培育新产业新业态，完善联农带农机制，促进农民增收。河北省保定市创新打造冰柿产品，让柿子成为推动乡村全面振兴、促进群众增收的新动力。今年，保定冰柿预计上市约320万个，产业产值约3200万元。</p>
+<p>保定是全国柿子七大主产区之一。当地生产的磨盘柿，形状扁圆，果肉细腻，味甜多汁。保定市磨盘柿种植面积27.8万亩，年产量约50万吨，占全国的12%，尤以易县种植广、产量高。</p>
+<p>面对滞销，王永旺带领农户成立合作社，开发柿子加工品。但柿饼、柿子醋、柿子酒等产品，都没能赢得市场。</p>
+<p>制作冰柿的关键技术，在于脱涩和温度控制。要采用低温速冻，控制细胞破损率，尽可能保留柿子的外形和口感；通过&ldquo;升温&rdquo;，让柿子释放二氧化碳，物理脱涩；再通过&ldquo;变温&rdquo;，让果肉组织充分糖化。&ldquo;加工过程中不放多余的东西，保证绿色健康和营养价值。&rdquo;王永旺说。</p>
+<p>为解决吃柿子容易流汁、弄脏手的问题，王永旺还想到了妙招：把整个冰柿放进盒子里，像吃杯装冰激凌一样，用勺挖着吃。柿子就此做成了&ldquo;冰激凌&rdquo;。</p>
+<p>去年，王永旺带着冰柿参加全球高端食品展览会、中国冰激凌冷食展览会，冰柿一亮相就大受欢迎。后来，有数百个客户与王永旺达成合作意向。&ldquo;这下试对了！&rdquo;王永旺的脸上满是欣慰。</p>
+<p>在保定，也有其他经营主体与王永旺不谋而合，想到了走生产冰柿这条路。</p>
+<p>保定沃隆农业发展有限公司的无菌生产车间里，一枚枚磨盘柿经过清洗、装杯、杀菌、覆膜、速冻等十几道工序，被加工为冰柿，装上冷链运输车，送往各地。</p>
+<p>&ldquo;厂里每天都在赶工。&rdquo;沃隆农业负责人郭子龙说，保定冰柿已在盒马鲜生、北京物美、欧亚集团等平台上架，逐步向全国铺货。</p>
+<p>面对广阔市场，标准化工序的建立和完善势在必行。保定与中国农业大学、河北大学、河北农业大学、西北农林科技大学等高校合作，在种植管理、产品加工、冷藏存储等环节建立标准化体系。&ldquo;比如，生产过程中精准控温冷冻，误差不超过0.5摄氏度，在锁住柿子清甜口感的同时，还延长了保质期。&rdquo;郭子龙说。</p>
+<p>针对中小微冰柿企业缺资金、缺土地等问题，易县创新推出共享商业模式，高标准建设190亩农副产品加工共享工厂。&ldquo;一期项目建设40亩标准化共享生产车间、冷库、办公楼等基础设施，并配备生产加工全自动设备、电商直播基地、物流配套设施，预计今年10月投产。&rdquo;易县农业农村局局长孙克军介绍。</p>
+<p>为更好引导冰柿产业创新升级，保定市强化顶层设计，出台《保定市柿子产业高质量发展三年行动计划（2024&mdash;2026年）》《保定冰柿品牌培育推广营销方案》，启动系列规范性标准制定工作，做大做强保定冰柿品牌。此外，组织龙头企业、合作社、种植大户等约30家经营主体成立保定市柿子产业高质量发展联盟，充分发挥各经营主体优势，引导柿子产业联合发展。</p>
+<p>随着冰柿走俏市场，磨盘柿的价格水涨船高。</p>
+<p>&ldquo;过去，收购价超过每斤5毛钱，农户就觉得有赚头。现在，收购价在每斤1元到2元，增收明显。&rdquo;郭子龙说。</p>
+<p>易县独乐乡中独乐村村民韩志花在沃隆农业打工，负责削皮、搬运等，每天收入100元。&ldquo;我家有几百棵柿子树，往年柿子便宜，把树租给别人。现在合同快到期了，我准备把树收回来自己种，每年能多挣不少！&rdquo;韩志花说。</p>
+<p>农民种柿子的积极性回来了。为帮助农户养护好柿树，保定市推进技术服务体系建设，联合院校机构在柿子标准化示范园、柿子专业合作社（专业村）开展技术帮扶指导，并组织农业职业经理人和农业科技特派员定期进村入园。</p>
+<p>&ldquo;剪枝非常重要，要去头和疏枝，将柿树控制在2米至3米高，既提升产量，又方便采摘。&rdquo;在独乐乡的柿子园里，河北农业大学的林果专家任士福指导着柿农。</p>
+<p>近年来，易县积极对接河北农业大学举办相关技术培训，内容涵盖种植、采收、加工、仓储、销售等环节。&ldquo;理论授课+实地实操+外出学习&rdquo;，既助力了柿农掌握技能，也夯实了保定冰柿的品牌基础。</p>
+<p>&ldquo;专家面对面为我们讲解，种植技巧、注意事项，都听得很明白。种柿子，卖冰柿，我们有信心！&rdquo;参加培训的易县刘家沟村柿农周双平说。</p>`,
   'canton-fair-2026': `
     <p><em>保定日报 2026年5月5日报道（河北省人民政府网站同步发布）</em></p>
     <p>五一假期，第139届中国进出口商品交易会（广交会）在广州举行。保定冰柿亮相广交会，凭借独特风味与优良品质，成为展会中极具辨识度的冀字号农产品名片。</p>
@@ -724,14 +763,14 @@ export const contentMap = {
 <p>为确保对接活动的精准高效，大会在筹备阶段开展了深入的前期工作。通过会前信息采集，分别建立了详细的采购商需求库和供应商产品库。依据采购商的具体需求，大会运营方将精准匹配相应的特色产业集群及产品，并为每位采购商定向推荐不少于3家符合条件的优质供应商。同时，依据梳理出的供需关系，科学设计对接活动的议程与场次安排，并指导供应商提前准备好产品资料与实物样品，为现场高效洽谈奠定基础。</p>
 <p>在活动现场服务保障方面，大会进行了周密部署。会场设置了专门的样品存放区、合作洽谈区与成果登记区，并配备了专职引导人员。为便利国际经贸交流，现场除安排4名专业翻译外，还将提供AI翻译设备支持。为促进合作落地，大会统一准备了标准化的意向订单与合作协议示范文本，可为达成合作意向的企业提供现场打印与签约服务。对于有进一步实地考察需求的采购商，还将协调提供周边两小时车程内的接送便利。</p>
 <p>举报/反馈 0 0 收藏 分享 微信好友 新浪微博 复制链接 扫码分享至微信 手机看 百度APP扫一扫<br>手机看更方便</p>`,
-  'hebei-hebnews-cn-2026-03-12-content-9488021-htm': `<p>政声直达|保定冰柿预计今年产量达到7250万枚_河北新闻网</p><p>（原文来源：hebei.hebnews.cn）</p>`,
+  'hebei-hebnews-cn-2026-03-12-content-9488021-htm': `<p>政声直达|保定冰柿预计今年产量达到7250万枚_河北新闻网</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
   'www-bdyixian-gov-cn-col-1673577057399-2026-07-17-1784276147972-html': `<p>一线见闻·共享智造丨全链共享 小冰柿销到海外-今日易县-易县人民政府 中国政府网 &nbsp;&nbsp;|&nbsp;&nbsp; 河北省人民政府 &nbsp;&nbsp;|&nbsp;&nbsp; 保定市人民政府</p>
 <p>当前位置： 首页 &nbsp;>>&nbsp; 新闻中心 &nbsp;>>&nbsp; 今日易县</p>
 <p>一线见闻·共享智造丨全链共享 小冰柿销到海外</p>
 <p>发布时间：2026年07月20日 信息来源： 字体：</p>
 <p>小 &nbsp;近日，在易县经济开发区的保定冰柿共享产业园十万级无菌车间内，全自动生产线满负荷运转。一枚枚橙黄饱满的磨盘柿经过清洗、去皮、消毒、速冻等工序，变成口感细腻、入口即化的冰柿产品。 &ldquo;这是我们的网红新品&lsquo;冰吸柿&rsquo;，捏碎了就能吸着吃，北京、天津的商超抢着要。&rdquo;保定沃隆农业发展有限公司负责人郭子龙介绍，设备共享让他们的产能增加了9倍，一天能生产3万枚冰柿，订单再多也不慌。 这份底气，放在一年多前，郭子龙不敢想。2024年11月保定冰柿迅速走红，各地订单纷至沓来，但由于产能严重不足，送上门的订单也不敢接。 走红，暴露短板。共享，破解困局。 2025年8月，易县立足&ldquo;中国磨盘柿之乡&rdquo;资源优势，高标准建设保定冰柿共享产业园，将标准化厂房、全自动生产线、万吨级智能冷库等全部建好、配齐，让沃隆农业这样的冰柿生产企业&ldquo;拎包入驻&rdquo;。 &ldquo;光是这台切瓣机采购价就25万元，整个车间改造下来需要几百万元。&rdquo;郭子龙指着流水线末端将冰柿一切两半的设备介绍，&ldquo;冰吸柿&rdquo;他们早就研发出来了，可一算设备投入就打了退堂鼓，只能把这个好设计锁在抽屉里。今年3月，他们正式入驻产业园，&ldquo;冰吸柿&rdquo;当月就下线，不到两个月销量突破30万袋，销售收入达100万元。 在郭子龙看来，&ldquo;拎包入驻&rdquo;既是减负良方，更是抢滩密钥。&ldquo;如果自己建厂房、买设备，至少得投入3000万元，建设、调试、投产最快也要一年。&rdquo;他说，凭借设备共享，他们得以轻装上阵，专注产品研发和市场拓展。 &ldquo;沃隆农业是产业园首批入驻企业，也是易县共享制造的首批受益者。随着共享产能全面释放，保定冰柿产业彻底告别&lsquo;有单难接、新品难上&rsquo;的困境。&rdquo;易县农业农村局冰柿产业负责人朱铭硕说，今年上半年，全县保定冰柿销量达1030万枚，同比增长8倍；全年产量预计可达7250万枚，是去年的20倍。 产能全面跃升，产业发展的舞台也愈发广阔。今年4月，沃隆农业把保定冰柿卖到加拿大，这也是保定冰柿首次出口。 刚拿到这笔意向订单时，郭子龙兴奋不已。但严苛的海外准入标准让他犯了难。HACCP（危害分析与关键控制点）食品安全体系认证、出口食品生产企业备案、农残与重金属筛查和微生物专项检测&hellip;&hellip;每一项都是硬门槛，都需要权威检测数据支撑。 眼看着到手的海外订单，就要卡在检测这一环。 关键时刻，设在产业园的保定冰柿共享检测中心发挥了作用。作为产业公共服务平台，该中心整合冰柿产业检测资源，企业不用购买检测设备、聘用专业质检人员，就近即可享受标准化、专业化检测服务。 同时，易县农业部门联系保定海关，围绕微生物检测、产品品质核验等关键环节，帮助企业提高自检自控能力、构建标准化和规范化品控体系，顺利打通保定冰柿出口&ldquo;最后一公里&rdquo;。 7月7日15时许，在保定冰柿共享检测中心，质检员马雪康将一批冰柿样品放进培养箱，准备对大肠菌群和菌落总数等进行检测。&ldquo;这是出厂检测的常规项，也是产品走向市场的第一道关口。&rdquo;他指着培养箱上的温度显示屏说，恒温培育48小时后，即可出具精准可靠的检测报告。&ldquo;不出园区就能完成日常检测，省钱、省力、省时、省心。&rdquo;郭子龙说。 朱铭硕介绍，除满足企业日常检测外，该中心还为有外检需要的企业提供样品收集、登记送检、对接第三方权威机构等全流程服务，有效破解了检测贵、检测周期长等难题。 &ldquo;我们将持续放大共享产业园的集聚优势，完善制造、检测、研发、销售全链条配套，持续做强做大冰柿特色产业。力争到&lsquo;十五五&rsquo;末全县冰柿及相关产业综合产值突破10亿元，让冰柿真正成为富民兴村的&lsquo;甜蜜产业&rsquo;。&rdquo;朱铭硕说。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;（来源：河北日报客户端） 网站简介 | 版权声明 | 联系方式 | 网站地图 冀ICP备2021017643号-1</p>
 <p>版权所有：河北省易县人民政府&nbsp;&nbsp;&nbsp;&nbsp;主办：易县人民政府办公室</p>`,
-  'bd-hebnews-cn-2026-07-10-content-9534309-htm': `<p>入驻共享产业园,保定冰柿"链"动全球 保定冰柿共享产业园是依托易县10万余亩磨盘柿资源打造的专业化、全链条农产品加工园区。实现原料、生产车间、加工设备、智能冷库、品牌渠道、生产标... 河北新闻网2026-07-10 17:25</p><p>（原文来源：bd.hebnews.cn）</p>`,
+  'bd-hebnews-cn-2026-07-10-content-9534309-htm': `<p>入驻共享产业园,保定冰柿"链"动全球 保定冰柿共享产业园是依托易县10万余亩磨盘柿资源打造的专业化、全链条农产品加工园区。实现原料、生产车间、加工设备、智能冷库、品牌渠道、生产标... 河北新闻网2026-07-10 17:25</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
   'www-bdyixian-gov-cn-col-1673577738667-2026-07-03-1783066637245-html': `<p>保定冰柿成功亮相2026中国·廊坊国际经济贸易洽谈会-政务信息-易县人民政府 中国政府网 &nbsp;&nbsp;|&nbsp;&nbsp; 河北省人民政府 &nbsp;&nbsp;|&nbsp;&nbsp; 保定市人民政府</p>
 <p>当前位置： 首页 &nbsp;>>&nbsp; 新闻中心 &nbsp;>>&nbsp; 政务信息</p>
 <p>保定冰柿成功亮相2026中国·廊坊国际经济贸易洽谈会</p>
@@ -796,7 +835,23 @@ export const contentMap = {
 <p>8 制胜丨第三集《挺进深蓝》</p>
 <p>9 时习之丨今天，重温习近平的强军嘱托</p>
 <p>10 ​桃城机场：云揽湖城胜景 翼开文旅新程——衡水市文化建设走笔之三十</p>`,
-  'www-chinanews-com-sh-shipin-cns-2026-05-26-news1055653-shtml': `<p>河北保定冰柿走红夏日市场 特色果品首次走出国门 近日,河北保定西大街的石板路上,不少游客手捧一碗冒着凉气的保定冰柿,边走边品尝。这款在古城街头热销的消暑甜品,货源来自50多公里外的保定易县。易... 中国新闻网2026-05-26 20:42</p><p>（原文来源：chinanews.com）</p>`,
+  'www-chinanews-com-sh-shipin-cns-2026-05-26-news1055653-shtml': `<p>各地 安徽 | 北京 | 重庆 | 福建 | 甘肃 | 贵州 | 广东 | 广西 | 海南 | 河北 | 河南 | 湖北 | 湖南 | 黑龙江 | 江苏 | 江西 | 吉林 | 辽宁 | 内蒙古 | 宁夏 | 青海 | 山东 | 山西 | 陕西 | 上海 | 四川 | 天津 | 新疆 | 兵团 | 云南 | 浙江</p>
+<p>发布时间：2026年05月26日 20:42 &nbsp;&nbsp;&nbsp;&nbsp;来源：中国新闻网</p>
+<p>武契奇：中国在诸多领域赶超西方，为我们中小国家指明了方向</p>
+<p>如何持续巩固拓展脱贫攻坚成果？贵州有“三招”</p>
+<p>戴耳环遭网暴灾区女干部：我的工作与耳环根本没关系</p>
+<p>“Z世代”秦岭创业记：山水之间玩转大漆慢生活</p>
+<p>武契奇登长城：购熊猫玩偶 笑谈“577”昵称</p>
+<p>航天员张志远母亲：点火瞬间我紧张心跳加速</p>
+<p>吉林“银发专家团”退而不休 公益门诊续写医者答卷</p>
+<p>近日，河北保定西大街的石板路上，不少游客手捧一碗冒着凉气的保定冰柿，边走边品尝。这款在古城街头热销的消暑甜品，货源来自50多公里外的保定易县。易县素有“中国磨盘柿之乡”美誉，磨盘柿种植面积达11.3万亩，年产鲜柿约25万吨，果肉厚实、甘甜爽口。依托得天独厚的柿子资源，当地创新研发保定冰柿，建成共享标准化工厂。目前，已有三家本土冰柿企业入驻生产，保障市场供应。</p>
+<p>港人飞天、太空“种稻”……记者直击神二十三乘组“太空出差”</p>
+<p>发表评论 文明上网理性发言，请遵守新闻评论服务协议 热门视频</p>
+<p>习言道丨我坚信，我们的英雄军队有信心、有能力打败一切来犯之敌！</p>
+<p>这车瓜，长沙人包了！河南大哥驱车千里赴长沙卖瓜 意外收获满城温暖</p>
+<p>对话杜富国：维护国家安全，每个人都要有“让我来”的担当</p>
+<p>专访《八仙！》导演牟正洋：神仙也有烟火气、市井感</p>
+<p>汲取红色力量 厚植家国情怀 哈尔滨90余名侨界代表共同观看《四渡》</p>`,
   'news-10jqka-com-cn-20260521-c676860337-shtml': `<p>据网信保定消息，保定拥有多款独具地方特色的消暑美食，成为当地夏日不可或缺的味觉记忆。这些美食不仅带来清凉体验，也承载着地方文化与情怀。</p>
 <p>保定冰柿：被誉为“长在树上的冰激凌”</p>
 <p>保定冰柿选用橙黄磨盘柿，经过清洗、去皮、装盒、速冻等十几道工序，从枝头鲜果转变为杯装甜品。其口感层次丰富，初尝如冰沙般微脆，随后散发出天然甜香与草木清气，融化后质地绵密，清凉解暑。</p>
@@ -814,9 +869,7 @@ export const contentMap = {
 <p>为拓展海外市场，园区对接海关部门，提供原产地证书办理、出口检验检测等一站式服务，实现生产、检测、通关无缝衔接。4月27日，首批500件共计15000杯保定冰柿发往加拿大，成功打开海外销售渠道。</p>
 <p>易县农业农村局副局长赵卫东表示，未来将以产业园全面投用为新起点，完善运营管理，拓展国内外市场，通过冰柿产业带动农户增收与乡村全面振兴。</p>
 <p>原文： 易县共享产业园全链发力 保定冰柿“闯”进海外市场 （来源：河北省人民政府）</p>`,
-  'www-bdyixian-gov-cn-col-1673577738667-2026-05-08-1778212631908-html': `<p>保定冰柿亮相第139届广交会-政务信息-易县人民政府 中国政府网 &nbsp;&nbsp;|&nbsp;&nbsp; 河北省人民政府 &nbsp;&nbsp;|&nbsp;&nbsp; 保定市人民政府</p>
-<p>当前位置： 首页 &nbsp;>>&nbsp; 新闻中心 &nbsp;>>&nbsp; 政务信息</p>
-<p>发布时间：2026年05月08日 信息来源： 字体：</p>`,
+  'www-bdyixian-gov-cn-col-1673577738667-2026-05-08-1778212631908-html': `<p>保定冰柿亮相第139届广交会 近日,保定冰柿亮相第139届广交会。活动现场,保定冰柿展位客商云集,吸引了俄罗斯、澳大利亚、美国、印尼等30多个国家的采购商驻足品鉴、洽谈合作。此... www.bdyixian.gov.cn2026-05-08 00:00</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
   'wsb-baoding-gov-cn-news-view-3524-html': `<strong> 太行“黄金果”扬帆出海迈向世界
 <p>本报讯（新畿辅-保定日报记者葛淑霞 通讯员赵新颖）4月28日，以“保定冰柿·闪亮全球”为主题，保定冰柿全球发布会在易县经济开发区举行。来自行业协会、科研院校、重点渠道采购商、电商平台及产业代表齐聚一堂，共同见证保定冰柿立足全国、迈向全球的重要时刻。</p>
 <p>4月28日，发布会现场保定冰柿生产企业与采购商、经销商签约。 郭恩桥 摄</p>
@@ -840,7 +893,7 @@ export const contentMap = {
 <p>2026年初，保定沃隆农业发展有限公司与加拿大合作方达成首批意向订单后，保定海关联合易县发展和改革局、易县经济开发区构建“政策宣讲+专题研讨+实地指导”工作模式，指导企业精准对接加拿大准入政策。同时，为企业开展农药残留、重金属及微生物检测，指导企业完成出口食品备案，规范标签与包装，并加强种植基地有害生物防控和农业投入品管理等。</p>
 <p>为助力“保定冰柿”出口，保定海关与易县政府共同设立“保定冰柿共享检测中心”，常态化培训企业质检员，提升自检自控能力。在通关环节，开通鲜活易腐农食产品属地查检绿色通道，以及预约查验、检验检疫证书“云签发”等便利措施，实现随报、随检、随放。</p>
 <p>保定海关相关负责人表示，将与易县政府继续深化合作，依托京雄保国际智慧港二级集货中心和高碑店保税物流中心（B型），探索“保定冰柿”快速通关新模式，助力特色农产品开拓更广阔国际市场。</p>`,
-  'www-360kuai-com-pc-96a55295c7e5ee0eb-cota-3-kuai-so-1-refer-scene-so-3-sign-360-': `<p>青春赛场激荡活力甜蜜产业赋能振兴 作为扎根保定本土的农业产业化重点龙头企业,保定市柿界新宠农业发展有限公司深耕满城区磨盘柿核心产区,专注柿子精深加工与高附加值产品研发,是推动当... 快资讯2026-06-01 10:46</p><p>（原文来源：360kuai.com）</p>`,
+  'www-360kuai-com-pc-96a55295c7e5ee0eb-cota-3-kuai-so-1-refer-scene-so-3-sign-360-': `<p>青春赛场激荡活力甜蜜产业赋能振兴 作为扎根保定本土的农业产业化重点龙头企业,保定市柿界新宠农业发展有限公司深耕满城区磨盘柿核心产区,专注柿子精深加工与高附加值产品研发,是推动当... 快资讯2026-06-01 10:46</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
   'finance-sina-com-cn-wm-2026-05-22-doc-inhytyys6167708-shtml': `<p>开展东西部协作，是党中央着眼推动区域协调发展、促进共同富裕作出的重大决策。1996 年 5 月，党中央作出“东西部扶贫协作”重大决策，确定东部省市与西部省区开展扶贫协作。 2021 年 3 月，中共中央办公厅、国务院办公厅把“东西部扶贫协作”提升为“东西部协作”，强调坚持和完善东西部协作的重要意义，确立结对帮扶关系，明确保持资金投入力度和干部人才选派力度不减，重点做好产业协作、劳务协作、消费协作、创新协作方式等工作要求。</p>
 <p>三十载薪火相传、接续奋斗，东西部跨越山海、守望相助。 为全景记录三十载协作历程、生动展现帮扶丰硕成果，农视网精心遴选各地东西部协作经典实践案例， 聚焦 产业协作、就业帮扶、消费帮扶、人才协作等重点领域，全方位讲述山海同心、携手共富的暖心故事，立体呈现东西部协作在巩固拓展脱贫攻坚成果、全面推进乡村振兴、扎实推动共同富裕进程中的使命担当与实践成效。</p>
 <p>河北省保定市易县是千年古县，有“风萧萧兮易水寒，壮士一去兮不复还”的壮士慷慨，是革命老区，有广为传唱的狼牙山五壮士的英雄赞歌。易县曾是国家级贫困县，位于太行山北端东麓，素有“七山一水二分田”之称，这里山场广阔、耕地稀缺，产业基础薄弱，优质 农产品 长期困于深山、出村进城难，品牌溢价低、增收渠道窄，成为制约山区发展的突出难题。</p>
@@ -1019,8 +1072,8 @@ export const contentMap = {
 <p>专栏丨“午夜之锤”：一次危险的霸权展示</p>
 <p>记者手记丨让科学之光在争鸣中更加璀璨</p>
 <p>狼牙山下“黄金果”，何以成为“夏日明星”？</p>`,
-  'hebei-hebnews-cn-2025-05-03-content-9336630-htm': `<p>树上长出"冰激凌"--保定冰柿"甜蜜逆袭"的故事 他刚刚从天津赶回来,一脸疲惫中带着喜悦,"早上六点多就出发了,到天津跟一个代理商签了协议。明天上午我还要去保定跟一家公司签合作协议。"... 河北新闻网2025-05-03 07:21</p><p>（原文来源：he.people.com.cn）</p>`,
-  'www-360kuai-com-pc-9d445cdd378d2101f-cota-3-kuai-so-1-refer-scene-so-3-sign-360-': `<p>2026年廊坊经洽会•观察丨集群赋能优品兴冀 去年参加廊坊经洽会时,沃隆农业的冰柿刚一亮相,一冰柜试吃品几乎秒空,多个国外客商品尝后当场提出订购意向。公司随后加快升级智能生产线,实现全流程... 快资讯2026-06-25 09:39</p><p>（原文来源：360kuai.com）</p>`,
+  'hebei-hebnews-cn-2025-05-03-content-9336630-htm': `<p>树上长出"冰激凌"--保定冰柿"甜蜜逆袭"的故事 他刚刚从天津赶回来,一脸疲惫中带着喜悦,"早上六点多就出发了,到天津跟一个代理商签了协议。明天上午我还要去保定跟一家公司签合作协议。"... 河北新闻网2025-05-03 07:21</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'www-360kuai-com-pc-9d445cdd378d2101f-cota-3-kuai-so-1-refer-scene-so-3-sign-360-': `<p>2026年廊坊经洽会•观察丨集群赋能优品兴冀 去年参加廊坊经洽会时,沃隆农业的冰柿刚一亮相,一冰柜试吃品几乎秒空,多个国外客商品尝后当场提出订购意向。公司随后加快升级智能生产线,实现全流程... 快资讯2026-06-25 09:39</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
   'he-xinhuanet-com-20260430-e98ced2137ef4665b972af7fb3d322e8-c-html': `<p>&emsp;&emsp;4月28日，“保定冰柿”全球发布会在河北易县经济开发区举行。来自行业协会、科研院校、重点渠道采购商、电商平台以及相关产业的代表共同见证“保定冰柿”迈向全球市场。</p>
 <p>&emsp;&emsp;发布会现场。郭恩桥 摄</p>
 <p>&emsp;&emsp;会上，保定冰柿产业中心、中国磨盘柿产业中心正式揭牌成立。同时，“保定冰柿”生产企业与重点采购商、经销商举行了签约仪式。</p>
@@ -1175,11 +1228,11 @@ export const contentMap = {
 <p>独家首发“搜地点直达笔记”，鸿蒙版小红书携手花瓣地图焕新体验</p>
 <p>中国企业管理案例与质性研究论坛（2025）举办</p>
 <p>网上不良信息举报电话：(010)52598588-8758<br> 关于中华网 | 广告服务 | 联系我们 | 招聘信息 | 版权声明 | 豁免条款 | 友情链接 | 中华网动态 <br> 版权所有 中华网</p>`,
-  'www-ccgp-gov-cn-cggg-dfgg-qtgg-202511-t20251105-25641127-htm': `<p>采购项目名称：易县2025年冰柿生产加工产业项目</p>
+  'www-ccgp-gov-cn-cggg-dfgg-qtgg-202511-t20251105-25641127-htm': `<p>采购项目编号：Z1306332501392002</p>
+<p>采购项目名称：易县2025年冰柿生产加工产业项目</p>
 <p>符合专业条件的供应商或者对招标文件作实质响应的供应商不足三家的</p>
 <p>本公告发布媒体：中国河北政府采购网、河北省公共资源交易中心网。</p>
 <strong>四、凡对本次公告内容提出询问，请按以下方式联系。
-<p>名 称：河北冀晟堂工程项目管理有限公司</p>
 <p>地 址：河北省石家庄市新华区友谊北大街398号西三庄别墅区14栋东区2-1</p>`,
   'www-hsrb-com-cn-detail-175170957421370-html': `<p>走进河北省保定市易县独乐乡的保定沃隆农业发展有限公司无菌车间，流水线上橙红色磨盘柿整齐码放。身着白色无菌服的工人们手指翻飞间，柿子褪去外皮，露出晶莹果肉，经过脱涩、糖化、速冻等十几道工序，最终被装进透明杯里，裹上一层薄霜，宛如香甜软糯的“冰激凌”。<br></p>
 <p>“您尝尝，这可是咱太行山的‘冻’科技！”沃隆农业总经理郭子龙递来一杯冰柿。揭开杯盖，橙黄的柿子表面覆着细密的白霜，勺子轻轻一挖，果肉冻成的冰沙入口即化，清甜沁凉直冲味蕾，夹杂着柿子特有的浓郁香气。</p>
@@ -1221,7 +1274,9 @@ export const contentMap = {
 <p>当前位置： 首页 &nbsp;>>&nbsp; 新闻中心 &nbsp;>>&nbsp; 图片新闻</p>
 <p>易县：2026年中国旅游日系列主题活动精彩纷呈</p>
 <p>发布时间：2026年05月22日 信息来源： 字体：</p>`,
-  'www-cnr-cn-hebei-yzkx-20260519-t20260519-527626581-shtml': `<p>河北易县:三条专属旅游线路发布 百种农特产品"出山" 特色美食展销区,保定冰柿、桑明茶、酸枣汤等百余种本土农特产品、农家风味美食整齐排布、原生态好物引得往来游客纷纷驻足选购。现场还开展了"柿... 央广网 2026-05-19 17:11</p><p>（原文来源：cnr.cn）</p>`,
+  'www-cnr-cn-hebei-yzkx-20260519-t20260519-527626581-shtml': `<p>2026-05-19 17:11:12 ��Դ�������</p>
+<p>5��19�գ�2026���й�������ϵ�������������ص��Ľ����������ʳ�ƽ������Ѱ�������Խӻ�ںӱ��������硤̫��ˮ����Ļ����ԡ�����Ʒ�����Ρ���������ɽ�ӡ�Ϊ���⣬ͳ������������Դ����ɫũ��Ʒ��Դ��ּ�ڴ��켯��ʳƷ����ũƷչ���������ƽ顢�������顢����������һ����ۺ�������ʢ�ᡣ</p>
+<p>�༭:���� ���ྫ����Ѷ����Ӧ���г����ء���������ͻ��ˡ���ӭ�ṩ����������24Сʱ��������400-800-0088��������Ҳ��ͨ�����������ľ��������Ͷ��ƽ̨������Ͷ�ߡ���Ȩ�����������°�Ȩ������������У�δ����Ȩ����ת�ء�ת������ϵ��cnrbanquan@cnr.cn��������ԭ������Ϊ���ǽ�׷�����Ρ� �Ȱ�</p>`,
   'www-beijing-gov-cn-ywdt-gqrd-202510-t20251016-4227391-html': `<p>丰台区：2025数智农业与服务贸易大会暨第三届新发地农产品博览会开幕_各区热点_首都之窗_北京市人民政府门户网站 要闻动态 > 各区热点</p>
 <p>丰台区：2025数智农业与服务贸易大会暨第三届新发地农产品博览会开幕</p>
 <p>日期：2025-10-16 16:11 &nbsp;&nbsp;&nbsp;&nbsp; 来源：丰台区人民政府</p>
@@ -1343,18 +1398,18 @@ export const contentMap = {
 <p>2024最美社会体育指导员暨活力体育组织征集</p>
 <p>第三届社会组织防艾短视频创作大赛</p>
 <p>推荐阅读 绿水青山 生态画卷 俯瞰湖南省常宁市洋泉水库，湖面上小岛星罗棋布、港湾纵横交错，青山与湖水交相辉映，构成一幅美丽生态画卷 2026-08-01 18:36 生态修复见成效 贡格尔草原成为兔狲乐园 内蒙古自治区赤峰市克什克腾旗，贡格尔草原的碎石坡与缓草甸是兔狲天然家园。 2026-08-01 18:35 科技赋能三夏 田间奏响丰收序曲 盛夏时节，各地生产有序推进，科技力量活跃田间地头。搭载北斗导航的收割机、植保无人机、智能灌溉机器人、农用航化飞机陆续上阵，智能化育秧、物联网巡田、智慧大棚广泛应用，数字化农事装备保障粮食生产，夯实秋粮丰收根基。 2026-08-01 18:34 暑期研学游 追寻工业科技魅力 河南省洛阳市涧西区开展"大厂开放日——寻访涧西工业根脉 探秘大国智造力量"暑期研学实践活动，学生们走进国家"一五"时期工业遗产历史文化街区、工业机器人科技智造研发场景，参观老一辈工业奋斗史、工业遗产及先进制造技术，感受大国重器与前沿科技魅力 2026-08-01 18:33 巧手绘醒狮 非遗润童心 暑假期间，梧州市青少年宫推出特色公益课程，将传统文化融入美育实践，让孩子们在轻松氛围中巧手创作、乐享暑期，感受非遗魅力 2026-08-01 18:32 光明网版权所有</p>`,
-  'www-zjknews-com-news-hebei-202605-14-483971-html': `<p>(乡村行·看振兴)树上长出"冰淇淋" "中国磨盘柿之乡"冻出新产业 5月11日,在易县的保定冰柿共享产业园加工车间,柿子经过脱涩、糖化、速冻等十几道工序,从这里走向全国各地。 万旭 摄 " 咱们的冰柿主要选用当地... 张家口新闻网 2026-05-14 09:05</p><p>（原文来源：zjknews.com）</p>`,
-  'hebei-hebnews-cn-2025-12-18-content-9455976-htm': `<p>河北保定:从"烫手山芋"到"树上冰激凌" 小柿子撑起大产业 河北新闻网2025-12-18 18:07</p><p>（原文来源：hebei.hebnews.cn）</p>`,
-  'link-url-dn9a-gy295k0rci-xozvxfdmksqtlw6cwjthyulhetvjxrgtivgs4rlrrijyuifi5os8jnl': `<p>保定冰柿真的好吃!</p><p>（原文来源：微信公众号）</p>`,
-  'link-url-dn9a-gy295k0rci-xozvxfdmksqtlw6cwjthyulhetvjxrgtivgs4rlrrijyuifomdvayb3': `<p>区委书记推荐的北京礼物&mdash;&mdash;张坊镇磨盘柿、冰柿 与您共度欢乐年</p><p>（原文来源：微信公众号）</p>`,
-  'link-url-dn9a-gy295k0rci-xozvxfdmksqtlw6cwjthyulhetvjxrgtivgs4rlrrijyuif-sgp0w4v': `<p>上综艺、拓销路、促增收!保定冰柿登陆芒果TV《至味食刻》</p><p>（原文来源：微信公众号）</p>`,
-  'link-url-dn9a-gy295k0rci-xozvxfdmksqtlw6cwjthyulhetvjxrgtivgs4rlrrijyuifg1qqxi1t': `<p>【市县亮点】易县:大力培育&ldquo;冰柿产业&rdquo;</p><p>（原文来源：微信公众号）</p>`,
-  'news-google-com-rss-articles-cbmivkfvx3lxte84wgxlm3c4cgzxoxburwtzeuq0ce1fow91x3r': `<p><a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE84WGxlM3c4cGZXOXBURWtZeUQ0cE1fOW91X3R5RXBweVZMSzc1eW5NRHp5dG52TmxtYVVaczUwVFZBVkVyT3hQOVllZEpMbGNfekgtZWpn?oc=5" target="_blank">首次！保定冰柿走出国门</p><p>（原文来源：QQ News）</p>`,
-  'news-google-com-rss-articles-cbmiv0fvx3lxte9azwmytvyymlpkekw2dgnhnkj0bxuyvldrm2g': `<p><a href="https://news.google.com/rss/articles/CBMiV0FVX3lxTE9aZWMyTVYyMlpkekw2dGNHNkJ0bXUyVldRM2gtRUZNMDhBRGVRRTRrVWhFSTBhTGJaR05lelBfWS1Fam45ZjQtdTNxZWdGTkY3X0pBb0lYTQ?oc=5" target="_blank">易县高标准建设保定</p><p>（原文来源：QQ News）</p>`,
+  'www-zjknews-com-news-hebei-202605-14-483971-html': `<p>(乡村行·看振兴)树上长出"冰淇淋" "中国磨盘柿之乡"冻出新产业 5月11日,在易县的保定冰柿共享产业园加工车间,柿子经过脱涩、糖化、速冻等十几道工序,从这里走向全国各地。 万旭 摄 " 咱们的冰柿主要选用当地... 张家口新闻网 2026-05-14 09:05</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'hebei-hebnews-cn-2025-12-18-content-9455976-htm': `<p>河北保定:从"烫手山芋"到"树上冰激凌" 小柿子撑起大产业 河北新闻网2025-12-18 18:07</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'link-url-dn9a-gy295k0rci-xozvxfdmksqtlw6cwjthyulhetvjxrgtivgs4rlrrijyuifi5os8jnl': `<p>保定冰柿真的好吃!</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'link-url-dn9a-gy295k0rci-xozvxfdmksqtlw6cwjthyulhetvjxrgtivgs4rlrrijyuifomdvayb3': `<p>区委书记推荐的北京礼物&mdash;&mdash;张坊镇磨盘柿、冰柿 与您共度欢乐年</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'link-url-dn9a-gy295k0rci-xozvxfdmksqtlw6cwjthyulhetvjxrgtivgs4rlrrijyuif-sgp0w4v': `<p>上综艺、拓销路、促增收!保定冰柿登陆芒果TV《至味食刻》</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'link-url-dn9a-gy295k0rci-xozvxfdmksqtlw6cwjthyulhetvjxrgtivgs4rlrrijyuifg1qqxi1t': `<p>【市县亮点】易县:大力培育&ldquo;冰柿产业&rdquo;</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'news-google-com-rss-articles-cbmivkfvx3lxte84wgxlm3c4cgzxoxburwtzeuq0ce1fow91x3r': `<p><a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE84WGxlM3c4cGZXOXBURWtZeUQ0cE1fOW91X3R5RXBweVZMSzc1eW5NRHp5dG52TmxtYVVaczUwVFZBVkVyT3hQOVllZEpMbGNfekgtZWpn?oc=5" target="_blank">首次！保定冰柿走出国门</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'news-google-com-rss-articles-cbmiv0fvx3lxte9azwmytvyymlpkekw2dgnhnkj0bxuyvldrm2g': `<p><a href="https://news.google.com/rss/articles/CBMiV0FVX3lxTE9aZWMyTVYyMlpkekw2dGNHNkJ0bXUyVldRM2gtRUZNMDhBRGVRRTRrVWhFSTBhTGJaR05lelBfWS1Fam45ZjQtdTNxZWdGTkY3X0pBb0lYTQ?oc=5" target="_blank">易县高标准建设保定</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
   'v-leader-bingshi-chushan': `<p>V领·对话保定｜一颗冰柿的出山与出海 百度首页 登录 搜索 复制 V领·对话保定｜一颗冰柿的出山与出海</p>
 <p>2026-06-27 16:21 央广网文化传媒有限公司官方账号 关注 11:29 央广网北京6月27日消息（记者 黄昂瑾 王艺霖 郜宾涛 安适存）2026年初，推进现代化首都都市圈建设的“施工图”全面铺开。作为首都都市圈的重要一子、京雄走廊上的重要节点，保定以创新为锚，以产业为链，在传统与现代的交汇中闯出新路——助力老字号“金字招牌”历久弥新，更赋能现代化产业体系持续向新。 央广网《V领》系列访谈“对话保定”，于群像之中，见保定新路。 本期对话嘉宾：保定沃隆农业发展有限公司董事长郭子龙。 更多精彩资讯请在应用市场下载“央广网”客户端。欢迎提供新闻线索，24小时报料热线400-800-0088；消费者也可通过央广网“啄木鸟消费者投诉平台”线上投诉。版权声明：本文章版权归属央广网所有，未经授权不得转载。转载请联系：cnrbanquan@cnr.cn，不尊重原创的行为我们将追究责任。 举报/反馈 0 0 收藏 分享 微信好友 新浪微博 复制链接 扫码分享至微信 手机看 百度APP扫一扫<br>手机看更方便</p>`,
-  'news-google-com-rss-articles-cbmickfvx3lxte1iethttfjwzkhtzvpmd2lzmkrkvelozvo0y2h': `<p><a href="https://news.google.com/rss/articles/CBMickFVX3lxTE1ieThTTFJWZkhtZVpMd2lZMkRKVElOZVo0Y2hWSXktYkpmT3hBQXZ4Ym9peXRtTlltQ19HZFdGclJ6elpFU1lZMXVSUExSb3RfaEJNaWVmbHI3Z0VDT0l2c25zV0VFc2Q2OFZJQ2FDSz</p><p>（原文来源：央广网）</p>`,
-  'news-google-com-rss-articles-cbmiggfbvv95cuxpsjrzmgo1m2pewupwewflamrkc3vvtlbcm2n': `<p><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPSjRZMGo1M2pEWUpWeWFlamRkc3VvTlBCM2NkQkZ4XzhUYUdYb0kyWkExOGlfakZ3VXMyWFVQZjdBc3RwNi1zRFRaWFdYMUZXejMtWGxJcmVJNDZ1a1NMVFFaQVlxZDlHQXVLbC1teF</p><p>（原文来源：新华网河北频道）</p>`,
+  'news-google-com-rss-articles-cbmickfvx3lxte1iethttfjwzkhtzvpmd2lzmkrkvelozvo0y2h': `<p><a href="https://news.google.com/rss/articles/CBMickFVX3lxTE1ieThTTFJWZkhtZVpMd2lZMkRKVElOZVo0Y2hWSXktYkpmT3hBQXZ4Ym9peXRtTlltQ19HZFdGclJ6elpFU1lZMXVSUExSb3RfaEJNaWVmbHI3Z0VDT0l2c25zV0VFc2Q2OFZJQ2FDSz</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'news-google-com-rss-articles-cbmiggfbvv95cuxpsjrzmgo1m2pewupwewflamrkc3vvtlbcm2n': `<p><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPSjRZMGo1M2pEWUpWeWFlamRkc3VvTlBCM2NkQkZ4XzhUYUdYb0kyWkExOGlfakZ3VXMyWFVQZjdBc3RwNi1zRFRaWFdYMUZXejMtWGxJcmVJNDZ1a1NMVFFaQVlxZDlHQXVLbC1teF</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
   'tangxian-bingshi-bidding': `<p>项目概况 蔬菜清洗污水处理设备、分拣设备、净菜加工流水线设备、气调充氮包装机、全自动冰柿加工设备招标项目的潜在投标人应在河北省公共资源交易服务平台获取招标文件，并于2026年07月01日 08点40分（北京时间）前递交投标文件。</p>
 <p>项目名称：唐县冰柿加工及净菜加工设备采购</p>
 <p>采购需求：冰柿加工及净菜加工设备采购，详见第四部分采购需求</p>
@@ -1371,7 +1426,8 @@ export const contentMap = {
 <strong>七、对本次招标提出询问，请按以下方式联系。
 <p>名 称：唐县高昌镇人民政府本级</p>
 <p>名 称：河北利招工程管理有限公司</p>`,
-  'hebei-bingshi-summer-market': `<p>中国新闻网报道保定冰柿走红夏日市场，冰柿口感似冰激凌，成为消暑新宠。同时报道冰柿首次走出国门，出口加拿大，标志着保定冰柿国际化迈出重要一步。</p><p>（原文来源：中国新闻网(河北)）</p>`,
+  'hebei-bingshi-summer-market': `<p>2025�꾩������PM2.5���Ũ�Ƚ�2020�꽵������20%����</p>
+<p>����վ��������Ϣ����������������������۵㡣 ���ñ���վ�������������Ȩ�� δ����Ȩ��ֹת�ء�ժ�ࡢ���Ƽ���������Υ�߽�����׷���������Ρ� [ ���ϴ���������Ŀ����֤(0106168) ] [ ��ICP֤040655�� ] [ ���������� 11010202009201�� ] [ ��ICP��2021034286��-7 ] [ �������ڽ���Ϣ��������֤����(2022)0000118����(2022)0000119 ]<br>Υ���Ͳ�����Ϣ�ٱ��绰��15699788000 �ٱ����䣺jubao@chinanews.com.cn �ٱ������ʹ��ù����취 �ܻ���86-10-87826688 Copyright ?1999-2024 chinanews.com. All Rights Reserved</p>`,
   'bingshi-canada-export-chain': `<p>据河北省人民政府消息，5月12日，易县经济开发区保定冰柿共享产业园内，自动化生产线正将本地磨盘柿加工成冰柿产品，销往全国乃至海外。该园区作为易县推动特色农业与 乡村振兴（885705） 的重要平台，已实现常态化运营，通过全产业链整合，推动冰柿产业向标准化、规模化、集约化发展。</p>
 <p>园区总占地39.8亩，总投资1.3亿元，建设了标准化生产车间、万吨级智能化冷库及共享实验室、电商直播基地等配套设施，形成集生产加工、冷链仓储、电商营销、质量检测于一体的全产业链体系。目前，沃隆农业公司已正式量产，柿柿如意、金柿缘两家企业即将投产，园区冷库已储备冰柿原料7000万枚，产能储备充足。</p>
 <p>在生产工艺上，园区采用自主研发的精准控温急冻技术，将生产温度误差控制在0.5℃以内，确保冰柿口感绵密顺滑。在运营管理上，园区推行“政府统筹、国企主理、市场运作、专业托管”模式，由河北泰丰农投发展有限公司统一运营，通过“六共享、一统一”模式，即原料、设施、标准、品控、宣推、渠道共享与全流程统一管理，降低企业入驻成本，实现“拎包入驻”。</p>
@@ -1388,21 +1444,31 @@ export const contentMap = {
 <p>新闻媒体网站 人民网 新华网 央视网 中国日报网 央广网 光明网 长城网 河北新闻网 河北经济网</p>
 <p>易县共享产业园赋能保定冰柿“链”动全球</p>
 <p>您访问的链接即将离开“河北省人民政府”门户网站</p>`,
-  'news-google-com-rss-articles-cbmixkfvx3lxte1xzgfothfytc1kzuxpwfn5sfizvhbpodhtddl': `<p><a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE1xZGFoTHFyTC1KZUxPWFN5SFIzVHBpODhtdDlfWjZCMjd6ZjZZU2xuUThzNk1zOGZhZUg2VWJPVm1aYjB4SjFqMDFrUzdiWmlFNEs3aUtsN29oeV9qZmc?oc=5" target="_blank"></p><p>（原文来源：华人头条）</p>`,
-  'news-google-com-rss-articles-cbmiakfvx3lxte1nm3bomvhsrtdmuw5lqldyrjgtcdq0ztmzznz': `<p><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE1nM3BOMVhsRTdmUW5LQldYRjgtcDQ0ZTMzZnZXa3lxWDJadFJLS2lzNFZoX0FqSG5uRjUxT1FOWWI2NE43M2JEM3JOVkpMTGowNFJBQWFZeXR1bURmbWhDR2dIOUxhaTBzZHc?oc=5" </p><p>（原文来源：heb.chinanews.com.cn）</p>`,
-  'news-google-com-rss-articles-cbmihwfbvv95cuxodfljrw9cqvbpn0rwcjfmdmvvoxjqowv3azj': `<p><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxOdFlJRW9CQVBPN0RwcjFmdmVVOXJqOWV3azJBQ29Xa3EtUl90b0hiX0ZyTHVZMG1nZlJhRGFxOXRNOGN6ZHljV3psLWI0bW5tZVpjcVFBem81R0luUERXMWhBV3c1VEIwd3QwZWczQn</p><p>（原文来源：新浪财经）</p>`,
-  'news-google-com-rss-articles-cbmickfvx3lxte1dvmjju1zvtkp1akzfvdkwrlhmnzbawwvhzm1': `<p><a href="https://news.google.com/rss/articles/CBMickFVX3lxTE1DVmJJU1ZVTkp1akZFVDkwRlhmNzBaWWVhZm1POWI2UzRQaTV5bEhWZFRhSUF5WnhmbkFVMXU4TmZuSjFmSFpaVU5VR0xRbVNmMGI1OGJJLTQxbUliYTBmWE5GQlEtSThFOS15WVFWQl</p><p>（原文来源：央广网）</p>`,
-  'news-google-com-rss-articles-cbmizkfvx3lxte05vgdtwdhlqvfqdhhytxjin1zkwlg1metonnj': `<p><a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE05VGdtWDhLQVFqdHhYTXJiN1ZkWlg1MEtoNnJhb3ZSeTVMUWZhaXhEUWNvTWNSdWNEdzJFLXpPS0owZUgtNUNrM01wcGRDYUcwWEVQM0lFLTFYRVFTMmxhc0ZFY19FZw?oc=5" targe</p><p>（原文来源：zjknews.com）</p>`,
-  'zheng-sheng-7250wan': `<p>邯郸新闻网、河北新闻网双源报道：保定冰柿生产线全部投产后，预计今年产量将达到7250万枚。易县冰柿产业持续扩大产能，为打造百亿级磨盘柿产业奠定基础。</p><p>（原文来源：邯郸新闻网）</p>`,
-  'news-google-com-rss-articles-cbmivkfvx3lxte9ns1roc3n4dwfswgwzofpur2yyqjjfoev6uzz': `<p><a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE9nS1Roc3N4dWFsWGwzOFpUR2YyQjJFOEV6UzZfQ0tXdFV3VU1NTUcza1cyNGdpNDY5R3Q3UEk1WWlQTHJnTEtITXNQeWpsc3Ytd2pXanJR?oc=5" target="_blank">被这支“会融化的柿子”</p><p>（原文来源：news.tom.com）</p>`,
-  'news-google-com-rss-articles-cbmif0fvx3lxte1grel3uuzuwdzcdtfsduptbtfuq2o0bgdzvk1': `<p><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1GREl3UUZuWDZCdTFsdUptbTFUQ2o0bGdzVk1oQTlyaGc4WE9GeGoxYzJLR1pXNFY4ZDBhem9lT3NhX1ZUNkxMS0pHRTZtQlVJTFhiZlpSbU14eldvR2FpS3hOR2JuU1ZwclN4WGh6Nk</p><p>（原文来源：news.cn）</p>`,
-  'news-google-com-rss-articles-cbmickfvx3lxte9sqlexmu9nuxuwowpeslnkndjyb0zamvhns19': `<p><a href="https://news.google.com/rss/articles/CBMickFVX3lxTE9sQlExMU9NUXUwOWpESlNKNDJyb0ZaMVhNS19JbDhRejdBTDg5QWQ3ckNPbkRZTUtqanZtcU04ci0wazJacDBrZGtKOXNFLTJfLVNtalRZamJ3SGdpZnJPdzFBa3l2SEFoMXRFSUVZWX</p><p>（原文来源：央广网）</p>`,
-  'news-google-com-rss-articles-cbmid0fvx3lxte16atbktxhnswzsmg1zrm5jbwveefbhcxjxcdj': `<p><a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE16aTBKTXhnSWZSMG1zRm5JbWVEeFBhcXJXcDJRNnA4ZkFpRkFxWjNmMjU1anYyYWdEeElCUzRlc2RKNVRXMm5US3pKaFVpWTc1OUNiMUJhMzNQMmViVXpYTE96NTdjbEZlSjJTZ0doUF</p><p>（原文来源：thecover.cn）</p>`,
-  'news-google-com-rss-articles-cbmiykfvx3lxte5it2lzb1hpsk52mk1hmujsdw1ys1fyektucu1': `<p><a href="https://news.google.com/rss/articles/CBMiYkFVX3lxTE5IT2lZb1hPSk52Mk1HMUJsdW1yS1FYektUcU1vTkt5SjdjcDVhWUY5Y25kTUxMdVFRbVR5dU9ncnNjMXlTZWFmMjB1ZERIV1dVVDlXZHYwcW5PRTU5MUt2VGFB?oc=5" target="_bl</p><p>（原文来源：新京报）</p>`,
-  'news-google-com-rss-articles-cbmidefvx3lxte56nwf3selnvhnfmfflzgfya1lmznfynxbjd0x': `<p><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE56NWF3SElNVHNFMFFLZGFYa1lmZnFYNXBjd0xudE5zQ0Vsc29ka3FNaE16WHJFSGtxRTN0TzNNbW5fRkNpbVFySEpqU1hhTmZGbk0yTmxJUV9Wa0U5YU51Z2stXzEzd1l4NmxZWDl5ck</p><p>（原文来源：新华网河北频道）</p>`,
-  'news-google-com-rss-articles-cbmigafbvv95cuxom2r1vg9hc2h2uzdxvehxytd3szjwmnfwr3j': `<p><a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOM2R1VG9hc2h2UzdXVEhxYTd3SzJwMnFWR3JMRWZ1NGljeWVpMmdtSWJobFp0a0RHVHYyZ3Q2ZDJKVnFSQS1uX0NRblBvdGlmam5zaWJSNnUzMWk3YWkxRDVCTTN2LUoteW9mWnp0U0</p><p>（原文来源：人民日报）</p>`,
-  'brand-plan': `<p>保定市出台三年行动计划及品牌培育方案，组建跨部门专家服务团队，落实专项资金助力企业技术创新。举办上海专场推介会，与560余家客商达成意向，与美国、韩国、泰国、新加坡等国渠道商建立联系。</p><p>（原文来源：综合公开报道）</p>`,
-  'news-google-com-rss-articles-cbmivefvx3lxtfbxz244vgxksezpt1qwslzhr3ixqwq5venxogp': `<p><a href="https://news.google.com/rss/articles/CBMiVEFVX3lxTFBxZ244VGxKSEZPT1QwSlZHR3IxQWQ5VENXOGpyUmdaZWY2a09pMkE1TkNJWHgzcTExUFpGckplc09jZ2w5TGpld3k5N3djMWpLZGFHYQ?oc=5" target="_blank">树上长出“冰激凌”——保定</p><p>（原文来源：Sohu）</p>`,
+  'news-google-com-rss-articles-cbmixkfvx3lxte1xzgfothfytc1kzuxpwfn5sfizvhbpodhtddl': `<p><a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE1xZGFoTHFyTC1KZUxPWFN5SFIzVHBpODhtdDlfWjZCMjd6ZjZZU2xuUThzNk1zOGZhZUg2VWJPVm1aYjB4SjFqMDFrUzdiWmlFNEs3aUtsN29oeV9qZmc?oc=5" target="_blank"></p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'news-google-com-rss-articles-cbmiakfvx3lxte1nm3bomvhsrtdmuw5lqldyrjgtcdq0ztmzznz': `<p><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE1nM3BOMVhsRTdmUW5LQldYRjgtcDQ0ZTMzZnZXa3lxWDJadFJLS2lzNFZoX0FqSG5uRjUxT1FOWWI2NE43M2JEM3JOVkpMTGowNFJBQWFZeXR1bURmbWhDR2dIOUxhaTBzZHc?oc=5" </p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'news-google-com-rss-articles-cbmihwfbvv95cuxodfljrw9cqvbpn0rwcjfmdmvvoxjqowv3azj': `<p><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxOdFlJRW9CQVBPN0RwcjFmdmVVOXJqOWV3azJBQ29Xa3EtUl90b0hiX0ZyTHVZMG1nZlJhRGFxOXRNOGN6ZHljV3psLWI0bW5tZVpjcVFBem81R0luUERXMWhBV3c1VEIwd3QwZWczQn</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'news-google-com-rss-articles-cbmickfvx3lxte1dvmjju1zvtkp1akzfvdkwrlhmnzbawwvhzm1': `<p><a href="https://news.google.com/rss/articles/CBMickFVX3lxTE1DVmJJU1ZVTkp1akZFVDkwRlhmNzBaWWVhZm1POWI2UzRQaTV5bEhWZFRhSUF5WnhmbkFVMXU4TmZuSjFmSFpaVU5VR0xRbVNmMGI1OGJJLTQxbUliYTBmWE5GQlEtSThFOS15WVFWQl</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'news-google-com-rss-articles-cbmizkfvx3lxte05vgdtwdhlqvfqdhhytxjin1zkwlg1metonnj': `<p><a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE05VGdtWDhLQVFqdHhYTXJiN1ZkWlg1MEtoNnJhb3ZSeTVMUWZhaXhEUWNvTWNSdWNEdzJFLXpPS0owZUgtNUNrM01wcGRDYUcwWEVQM0lFLTFYRVFTMmxhc0ZFY19FZw?oc=5" targe</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'zheng-sheng-7250wan': `<p>政声直达 | 保定冰柿预计今年产量达到7250万枚_邯郸新闻网</p>
+<p>政声直达 | 保定冰柿预计今年产量达到7250万枚</p>
+<p>政声直达 | 保定冰柿预计今年产量达到7250万枚 2026-03-13 20:15 河北日报客户端 编辑：赫峥 缩小字体 放大字体 收藏 微博 微信 分享 腾讯QQ QQ空间</p>
+<p>本网站注明稿件来源为其他媒体与网站的图文稿件，均为转载稿。本网站转载，出于非商业性的文化交流与传播目的，如转载稿涉及版权等问题，请作者在两周内速来电或来函联系，我们愿支付合理费用，并协调给予处理。如不同意本网站之转载，请及时告知我方撤除。</p>
+<p>曲周“一品一播”激活县域电商新动能 2026-03-10</p>
+<p>“最美巾帼奋斗者”陈玉文：17年守护，为孩子们撑起一片天 2026-03-10</p>
+<p>千年邺城年味浓 民俗盛宴迎客来 2026-02-20</p>
+<p>复兴区“一品一播”架起网销金桥 2026-02-19</p>
+<p>“三子大礼包”诚意满满暖客心 2026-02-19</p>
+<p>友情链接 河青新闻网 中原新闻网 邯郸文明网 商业资讯</p>
+<p>邯郸市委宣传部邯郸市互联网信息办公室主管邯郸新闻传媒中心主办</p>`,
+  'news-google-com-rss-articles-cbmivkfvx3lxte9ns1roc3n4dwfswgwzofpur2yyqjjfoev6uzz': `<p><a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE9nS1Roc3N4dWFsWGwzOFpUR2YyQjJFOEV6UzZfQ0tXdFV3VU1NTUcza1cyNGdpNDY5R3Q3UEk1WWlQTHJnTEtITXNQeWpsc3Ytd2pXanJR?oc=5" target="_blank">被这支“会融化的柿子”</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'news-google-com-rss-articles-cbmif0fvx3lxte1grel3uuzuwdzcdtfsduptbtfuq2o0bgdzvk1': `<p><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1GREl3UUZuWDZCdTFsdUptbTFUQ2o0bGdzVk1oQTlyaGc4WE9GeGoxYzJLR1pXNFY4ZDBhem9lT3NhX1ZUNkxMS0pHRTZtQlVJTFhiZlpSbU14eldvR2FpS3hOR2JuU1ZwclN4WGh6Nk</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'news-google-com-rss-articles-cbmickfvx3lxte9sqlexmu9nuxuwowpeslnkndjyb0zamvhns19': `<p><a href="https://news.google.com/rss/articles/CBMickFVX3lxTE9sQlExMU9NUXUwOWpESlNKNDJyb0ZaMVhNS19JbDhRejdBTDg5QWQ3ckNPbkRZTUtqanZtcU04ci0wazJacDBrZGtKOXNFLTJfLVNtalRZamJ3SGdpZnJPdzFBa3l2SEFoMXRFSUVZWX</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'news-google-com-rss-articles-cbmid0fvx3lxte16atbktxhnswzsmg1zrm5jbwveefbhcxjxcdj': `<p><a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE16aTBKTXhnSWZSMG1zRm5JbWVEeFBhcXJXcDJRNnA4ZkFpRkFxWjNmMjU1anYyYWdEeElCUzRlc2RKNVRXMm5US3pKaFVpWTc1OUNiMUJhMzNQMmViVXpYTE96NTdjbEZlSjJTZ0doUF</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'news-google-com-rss-articles-cbmiykfvx3lxte5it2lzb1hpsk52mk1hmujsdw1ys1fyektucu1': `<p><a href="https://news.google.com/rss/articles/CBMiYkFVX3lxTE5IT2lZb1hPSk52Mk1HMUJsdW1yS1FYektUcU1vTkt5SjdjcDVhWUY5Y25kTUxMdVFRbVR5dU9ncnNjMXlTZWFmMjB1ZERIV1dVVDlXZHYwcW5PRTU5MUt2VGFB?oc=5" target="_bl</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'news-google-com-rss-articles-cbmidefvx3lxte56nwf3selnvhnfmfflzgfya1lmznfynxbjd0x': `<p><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE56NWF3SElNVHNFMFFLZGFYa1lmZnFYNXBjd0xudE5zQ0Vsc29ka3FNaE16WHJFSGtxRTN0TzNNbW5fRkNpbVFySEpqU1hhTmZGbk0yTmxJUV9Wa0U5YU51Z2stXzEzd1l4NmxZWDl5ck</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'news-google-com-rss-articles-cbmigafbvv95cuxom2r1vg9hc2h2uzdxvehxytd3szjwmnfwr3j': `<p><a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOM2R1VG9hc2h2UzdXVEhxYTd3SzJwMnFWR3JMRWZ1NGljeWVpMmdtSWJobFp0a0RHVHYyZ3Q2ZDJKVnFSQS1uX0NRblBvdGlmam5zaWJSNnUzMWk3YWkxRDVCTTN2LUoteW9mWnp0U0</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'brand-plan': `<p>保定市出台三年行动计划及品牌培育方案，组建跨部门专家服务团队，落实专项资金助力企业技术创新。举办上海专场推介会，与560余家客商达成意向，与美国、韩国、泰国、新加坡等国渠道商建立联系。</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
+  'news-google-com-rss-articles-cbmivefvx3lxtfbxz244vgxksezpt1qwslzhr3ixqwq5venxogp': `<p><a href="https://news.google.com/rss/articles/CBMiVEFVX3lxTFBxZ244VGxKSEZPT1QwSlZHR3IxQWQ5VENXOGpyUmdaZWY2a09pMkE1TkNJWHgzcTExUFpGckplc09jZ2w5TGpld3k5N3djMWpLZGFHYQ?oc=5" target="_blank">树上长出“冰激凌”——保定</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`,
   'news-google-com-rss-articles-cbmickfvx3lxte1gntbytldsztdhdfrfluzfbkxix3fqyxz2sux': `<p><a href="https://news.google.com/rss/articles/CBMickFVX3lxTE1GNTBYTldsZTdHdFRFLUZfbkxiX3FQYXZ2SUxWY28tbnJhWlBGQ2g1VFgtUWc1OGlqd0lRV0lFelRSTnprcUZJYzN5dW4zbjktaGhVVjZpdmpFTFEzYTNTWFJBLWNTRXlLZzVCTEM2VW</p><p>（原文来源：央广网）</p>`,
   'news-google-com-rss-articles-cbmivefvx3lxte9xz0zmvc1itvhszuj6afnmy2zuv1lmt2uwoev': `<p><a href="https://news.google.com/rss/articles/CBMiVEFVX3lxTE9xZ0ZmVC1ITVhsZUJ6aFNmY2ZUV1lMT2UwOEVVcm9lZ3pjaDhfQU0wZjJabGxrenpPUVd4SDNpaUNZX1NPUEZzc09PWUFQUk43QnVnRQ?oc=5" target="_blank">上新！易县磨盘柿秒变“冰激</p><p>（原文来源：Sohu）</p>`,
   'news-google-com-rss-articles-cbmifefvx3lxte1kdtrym1bka29uq0vtcln1z2rzcmv1r1c4t2z': `<p><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE1KdTRYM1Bka29uQ0VtclN1Z2RZcmV1R1c4T2ZFV0x4R3ctVEppWnRfQ0J1bFI3YVRGYklUbzBBbUtaVFVISUdWeDFoamRFSDdWSk8tMGVQMDZEbWZSRTlrUHFMclRaZXVEbVJCOS1kWk</p><p>（原文来源：news.cn）</p>`,
