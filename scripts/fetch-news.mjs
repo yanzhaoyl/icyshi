@@ -156,13 +156,13 @@ function escapeTemplate(s) {
 async function fillArticleContent(article) {
   const { map } = loadContentMap();
   if (map[article.slug]) return;
-  const content = await extractArticleContent(article.sourceUrl);
+  const content = await extractArticleContent(article.source, article.sourceUrl);
   if (content) {
     map[article.slug] = content;
     saveContentMap(map);
     console.log(`  [Content] 已抓取正文: ${article.title.slice(0, 30)}`);
   } else {
-    const fallback = `<p>${escapeTemplate(article.summary || article.title)}</p><p>（原文来源：${article.source}）</p>`;
+    const fallback = `<p>${escapeTemplate(article.summary || article.title)}</p><p style="margin-top:16px;color:#888;font-size:0.85rem;">本文内容由 ${article.source || '网络'} 公开发布，本站进行自动采集、整理与转载。原文链接：<a href="${article.sourceUrl}" target="_blank" rel="noopener">${article.sourceUrl}</a>。如涉侵权请联系删除。</p>`;
     map[article.slug] = fallback;
     saveContentMap(map);
     console.log(`  [Content] 使用摘要 fallback: ${article.title.slice(0, 30)}`);
