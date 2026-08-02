@@ -9,13 +9,17 @@ const DATA_PATH = join(__dirname, '..', 'src', 'data', 'articles.json');
 const articles = JSON.parse(readFileSync(DATA_PATH, 'utf-8'));
 const { map } = loadContentMap();
 
-// 找出需要重新提取的文章：正文太短（<200字纯文本）或只有fallback
+// 找出需要重新提取的文章：正文太短（<200字纯文本）或只有fallback或含噪声
 const needsReExtract = articles.filter(a => {
   if (a.category !== 'news' && a.category !== 'enterprise') return false;
   const content = map[a.slug];
   if (!content) return true;
   const text = content.replace(/<[^>]+>/g, '').trim();
-  return text.length < 200 || content.includes('（本文为自动采集摘要') || content.includes('（原文来源：');
+  if (text.length < 200) return true;
+  if (content.includes('（本文为自动采集摘要') || content.includes('（原文来源：')) return true;
+  // 含噪声
+  if (content.includes('百度首页') || content.includes('登录 搜索 复制') || content.includes('扫码分享至微信') || content.includes('手机看更方便')) return true;
+  return false;
 });
 
 console.log(`[Backfill] 需要重新提取正文: ${needsReExtract.length} 篇`);
@@ -44,13 +48,13 @@ for (const article of needsReExtract) {
     }
   }
 
-  const content = await extractArticleContent(article.sourceUrl);
+  const content = await extractArticleContent(article.source, article.sourceUrl);
   if (content) {
     map[article.slug] = content;
     console.log(`✅ 已重新提取: ${article.title.slice(0, 40)}`);
   } else {
-    // 更好的 fallback
-    const fallback = `<p>${article.summary || article.title}</p><p style="color:#999;font-size:0.9rem;">（本文为自动采集摘要，点击原文链接查看完整内容）</p>`;
+    // 更好的 fallback + 侵权声明
+    const fallback = `<p>${article.summary || article.title}</p><p style="margin-top:16px;color:#888;font-size:0.85rem;">本文内容由 ${article.source || '网络'} 公开发布，本站进行自动采集、整理与转载。原文链接：<a href="${article.sourceUrl}" target="_blank" rel="noopener">${article.sourceUrl}</a>。如涉侵权请联系删除。</p>`;
     map[article.slug] = fallback;
     console.log(`️ fallback: ${article.title.slice(0, 40)}`);
   }
