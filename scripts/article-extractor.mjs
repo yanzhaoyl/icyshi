@@ -72,21 +72,23 @@ function extractContentArea(html) {
 }
 
 const NOISE_PATTERNS = [
-  /^当前位置[:：]/,
-  /^来源[:：]/,
-  /^编辑[:：]/,
-  /^记者[:：]/,
-  /^作者[:：]/,
-  /^原标题[:：]/,
-  /^(网站简介|版权声明|联系方式|关于我们|免责声明|投稿|广告服务|加入我们)$/,
+  /当前位置[:：]/,
+  /来源[:：]/,
+  /编辑[:：]/,
+  /记者[:：]/,
+  /作者[:：]/,
+  /原标题[:：]/,
+  /(发布时间|发布日期|时间)[:：]/,
+  /(信息来源|消息来源|文章来源)[:：]/,
+  /(字体[:：]|字号[:：]|大\s*中\s*小|小\s*中\s*大)/,
+  /(网站简介|版权声明|联系方式|关于我们|免责声明|投稿|广告服务|加入我们)/,
   /版权所有/,
   /主办单位/,
   /承办单位/,
   /协办单位/,
   /技术支持/,
   /(百度首页|登录|搜索|复制|举报|反馈|分享至|微信好友|新浪微博|复制链接|扫码分享)/,
-  /(字体[:：]|字号[:：]|大\s*中\s*小)/,
-  /(中国政府网|河北省人民政府|保定市人民政府|网站首页|设为首页|加入收藏|无障碍|长者模式)/,
+  /(中国政府网|河北省人民政府|保定市人民政府|网站首页|设为首页|加入收藏|无障碍|长者模式|互动交流)/,
   /更多精彩资讯请在应用市场下载/,
   /欢迎提供新闻线索/,
   /24小时报料热线/,
@@ -102,6 +104,13 @@ const NOISE_PATTERNS = [
   /^\d{4}年\d{1,2}月\d{1,2}日\s+\d{2}:\d{2}/,
   /^\d{2}:\d{2}\s+(来源|原创)/,
   /(举报\s*\/\s*反馈|投诉|热线|客服|\d{3,4}-\d{7,8})/,
+  /^\s*\d+\s*$/,
+  /^\s*[A-Z]{2,}\d{0,2}\s*$/,
+  /^(上一篇|下一篇|下一页|上一页|责任编辑)([:：]|$)/,
+  /(来源[:：]\s*(河北日报|燕赵都市报|保定晚报|保定日报|长城网|河北新闻网|新华社|中国新闻网|央广网|人民网|新华网|光明网|经济日报|农民日报))$/,
+  /(首页\s*>>\s*|新闻中心\s*>>\s*|今日易县)/,
+  /^(回放|直播|更多视频|精彩推荐|热门推荐|猜你喜欢|相关阅读)/,
+  /冀ICP备\d+号/,
 ];
 
 function isNoise(text) {
@@ -115,8 +124,7 @@ function isNoise(text) {
 /** 把候选 HTML 拆成段落 */
 function paragraphsFromHtml(html) {
   const result = [];
-  // 先按 <p>, <h1-6>, <li> 等切分
-  const parts = html.split(/(<\/?(?:p|h[1-6]|li)[^>]*>)/gi);
+  const parts = html.split(/(<\/?(?:p|h[1-6]|li|br)[^>]*>)/gi);
   let buffer = '';
 
   function flush() {
@@ -129,7 +137,7 @@ function paragraphsFromHtml(html) {
   }
 
   for (const part of parts) {
-    if (/^<\/(?:p|h[1-6]|li)>/i.test(part)) {
+    if (/^<\/p>/i.test(part) || /^<br/i.test(part)) {
       buffer += ' ';
       flush();
     } else if (/^<(?:p|h[1-6]|li)[^>]*>/i.test(part)) {
@@ -140,20 +148,40 @@ function paragraphsFromHtml(html) {
   }
   flush();
 
+  // 如果只得到 1-2 个段落，尝试按句号/分号分割
+  if (result.length <= 2) {
+    const expanded = [];
+    for (const r of result) {
+      const sentences = r.split(/(?<=[。！？])\s*/);
+      for (const s of sentences) {
+        const t = s.trim();
+        if (t && !isNoise(t)) expanded.push(t);
+      }
+    }
+    if (expanded.length > result.length) return expanded;
+  }
+
   return result;
 }
 
-/** 清理段落中的百家号/百度噪声 */
+/** 清理段落中的噪声 */
 function cleanParagraphNoise(paragraphs) {
   return paragraphs.map(p => {
-    // 去掉开头的"百度首页 登录 搜索 复制 XXX" 等
-    p = p.replace(/^(百度首页\s+登录\s+搜索\s+复制\s+)?.*?(?=2026|2025|\d{4}年)/, '');
-    // 去掉开头的人名 + 空格 + 日期格式
-    p = p.replace(/^[^\u4e00-\u9fa5a-zA-Z0-9]+/, '');
-    // 去掉末尾的"手机看\n 百度APP扫一扫  \n手机看更方便" 等
-    p = p.replace(/手机看\s*(百度APP扫一扫\s*)?手机看更方便?$/, '');
+    // 去掉"百度首页 登录 搜索 复制"
+    p = p.replace(/^百度首页\s+登录\s+搜索\s+复制\s*/g, '');
+    // 去掉开头纯数字+空格
+    p = p.replace(/^\s*\d+\s+/, '');
+    // 去掉末尾的"手机看"等
+    p = p.replace(/手机看\s*(百度APP扫一扫\s*)?手机看更方便?$/g, '');
+    // 去掉开头的"（来源：XXX）"
+    p = p.replace(/^[（(]来源[:：][^）)]*[）)]\s*/g, '');
     return p.trim();
-  }).filter(p => p.length >= 20);
+  }).filter(p => {
+    if (p.length < 20) return false;
+    const chineseChars = p.replace(/[^\u4e00-\u9fa5]/g, '').length;
+    if (chineseChars < 10) return false;
+    return true;
+  });
 }
 
 /** 用转义后的安全文本生成 HTML 段落 */
@@ -212,9 +240,10 @@ export async function extractArticleContent(sourceName, sourceUrl, retries = 2) 
       // 进一步清洗：去掉噪声段落
       paragraphs = cleanParagraphNoise(paragraphs);
 
+      // 再次过滤：必须有一定中文含量
       paragraphs = paragraphs.filter(p => {
         const charCount = p.replace(/[^\u4e00-\u9fa5]/g, '').length;
-        return charCount >= 20 || p.length >= 40;
+        return charCount >= 15 || p.length >= 30;
       });
 
       if (paragraphs.length === 0) return null;
