@@ -9,7 +9,7 @@ const DATA_PATH = join(__dirname, '..', 'src', 'data', 'articles.json');
 const articles = JSON.parse(readFileSync(DATA_PATH, 'utf-8'));
 const { map } = loadContentMap();
 
-// 找出需要重新提取的文章：正文太短（<200字纯文本）或只有fallback或含噪声
+// 找出需要重新提取的文章：正文太短、fallback、含噪声、或段落太少
 const needsReExtract = articles.filter(a => {
   if (a.category !== 'news' && a.category !== 'enterprise') return false;
   const content = map[a.slug];
@@ -17,8 +17,19 @@ const needsReExtract = articles.filter(a => {
   const text = content.replace(/<[^>]+>/g, '').trim();
   if (text.length < 200) return true;
   if (content.includes('（本文为自动采集摘要') || content.includes('（原文来源：')) return true;
-  // 含噪声
-  if (content.includes('百度首页') || content.includes('登录 搜索 复制') || content.includes('扫码分享至微信') || content.includes('手机看更方便')) return true;
+  // 含各种噪声
+  const noiseTerms = [
+    '百度首页', '登录 搜索 复制', '扫码分享至微信', '手机看更方便',
+    '中国政府网', '当前位置', '发布时间', '字体：', '字号：',
+    '网站简介 | 版权', '版权所有：', '主办单位：', '无障碍',
+    '加入收藏', '设为首页', '长者模式', '互动交流',
+    '首页 >>', '新闻中心 >>', '今日易县', '责任编辑',
+    '下一篇', '回放', '更多视频', '冀ICP备',
+  ];
+  if (noiseTerms.some(t => content.includes(t))) return true;
+  // 段落太少（<4个p标签）且内容长，可能是没分段的
+  const pCount = (content.match(/<p[^>]*>/g) || []).length;
+  if (text.length > 500 && pCount < 4) return true;
   return false;
 });
 
